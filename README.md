@@ -1,2 +1,2 @@
 # Arkanoid 
-Training project. Visual interface the game based on UnityEngine.
+Training project.The game is completely based on unity.

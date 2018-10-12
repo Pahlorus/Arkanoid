@@ -6,18 +6,17 @@ namespace Arkanoid
 {
     public class BatControler : MonoBehaviour
     {
+        private float _speedBat = 10.0f;
+        private float _coordX = 0.0f;
+        private float _coordY = -3.5f;
 
-        // Use this for initialization
-        void Start()
+        void FixedUpdate()
         {
+            _coordX += Input.GetAxis("Horizontal") * Time.deltaTime * _speedBat;
+            transform.position = new Vector3(_coordX, _coordY);
 
         }
 
-        // Update is called once per frame
-        void Update()
-        {
-
-        }
     }
 }
 
