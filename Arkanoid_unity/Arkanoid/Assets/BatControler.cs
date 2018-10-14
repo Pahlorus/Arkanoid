@@ -6,7 +6,7 @@ namespace Arkanoid
 {
     internal class BatControler : MonoBehaviour
     {
-        private float _speedBat = 10.0f;
+        private float _speedBat = 25.0f;
         private float _coordX = 0.0f;
         private float _coordY = -3.5f;
 
