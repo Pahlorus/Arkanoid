@@ -9,8 +9,11 @@ namespace Arkanoid
 {
     internal class BatSpeedUp : PowerUps
     {
-        base.
-
+        private int speedMultyplier = 3;
+        public override void PowerUpAction()
+        {
+            _batScript.SpeedUp(speedMultyplier);
+        }
     }
 
 }
