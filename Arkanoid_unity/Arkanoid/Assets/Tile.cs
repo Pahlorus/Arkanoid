@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace Arkanoid
 {
@@ -18,10 +16,8 @@ namespace Arkanoid
         {
             if (_isDestroyable && _durability > 0)
                 _durability -= 1;
-            if(_durability ==0 )
-            gameObject.SetActive(false);
-
+            if (_durability == 0)
+                gameObject.SetActive(false);
         }
-
     }
 }

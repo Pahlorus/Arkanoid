@@ -20,14 +20,15 @@ namespace Arkanoid
 
         void Awake()
         {
-            transform.position = new Vector3(_coordX, _coordY);
+            transform.position = new Vector3(_coordX, _coordY, -1);
             _pelletRigidbody = GetComponent<Rigidbody2D>();
             _movement = new Vector3(-6, 6, 0);
             _isPelletActive = false;
         }
 
-        void OnCollisionEnter2D()
+        void OnCollisionEnter2D(Collision2D collision)
         {
+            if (collision.transform.tag == "Tile")
             BonusCreate?.Invoke(this, EventArgs.Empty);
         }
 

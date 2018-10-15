@@ -1,7 +1,5 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿
 using UnityEngine;
-
 
 namespace Arkanoid
 {
@@ -18,15 +16,12 @@ namespace Arkanoid
         private GameObject _bat;
         [SerializeField]
         private GameObject _powerUps;
+        [SerializeField]
         private BatSpeedUp _powerUp;
-
 
         private int _lives;
         private float _boardHeight = 10.5f;
         private float _boardWidth = 18.17F;
-
-
-
 
         void Awake()
         {
@@ -35,25 +30,8 @@ namespace Arkanoid
 
         private void _scriptPellet_BonusCreate(object sender, System.EventArgs e)
         {
-            _powerUp = new GameObject("BatSpeedUp", typeof(BatSpeedUp)).GetComponent<BatSpeedUp>();
-            _powerUp.transform.SetParent(_powerUps.transform);
-        }
-
-
-        // Use this for initialization
-
-
-        void Start()
-        {
-            //Application.targetFrameRate = 40;
-        }
-
-
-
-        void Update()
-        {
-
-
+            BatSpeedUp powerUp = Instantiate(_powerUp, _powerUps.transform);
+            powerUp.transform.localScale = Vector3.one;
         }
     }
 }

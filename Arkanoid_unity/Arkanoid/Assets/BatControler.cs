@@ -10,6 +10,7 @@ namespace Arkanoid
         private float _speedBat;
         private float _coordX = 0.0f;
         private float _coordY = -3.5f;
+
         internal void Awake()
         {
             _speedBat = _initialSpeedBat;
@@ -25,7 +26,6 @@ namespace Arkanoid
         {
             _speedBat = _initialSpeedBat * multiplier;
         }
-
     }
 }
 

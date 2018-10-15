@@ -211,7 +211,7 @@ GameObject:
   - component: {fileID: 4437075016289918}
   m_Layer: 0
   m_Name: LevelBlock1
-  m_TagString: Untagged
+  m_TagString: Tile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8008,9 +8008,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _isDestroyable: 1
   _durability: 0
-  color:
-    serializedVersion: 2
-    rgba: 0
 --- !u!114 &114003177707775386
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -8024,9 +8021,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _isDestroyable: 1
   _durability: 1
-  color:
-    serializedVersion: 2
-    rgba: 0
 --- !u!114 &114004969842861124
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -8040,9 +8034,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _isDestroyable: 1
   _durability: 1
-  color:
-    serializedVersion: 2
-    rgba: 0
 --- !u!114 &114005231381992394
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -8056,9 +8047,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _isDestroyable: 1
   _durability: 0
-  color:
-    serializedVersion: 2
-    rgba: 0
 --- !u!114 &114011929841700274
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -8072,9 +8060,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _isDestroyable: 1
   _durability: 1
-  color:
-    serializedVersion: 2
-    rgba: 0
 --- !u!114 &114013982790073330
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -8088,9 +8073,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _isDestroyable: 1
   _durability: 1
-  color:
-    serializedVersion: 2
-    rgba: 0
 --- !u!114 &114032348644358034
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -8104,9 +8086,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _isDestroyable: 1
   _durability: 0
-  color:
-    serializedVersion: 2
-    rgba: 0
 --- !u!114 &114040729232518766
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -8120,9 +8099,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _isDestroyable: 1
   _durability: 0
-  color:
-    serializedVersion: 2
-    rgba: 0
 --- !u!114 &114041812660477154
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -8136,9 +8112,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _isDestroyable: 1
   _durability: 0
-  color:
-    serializedVersion: 2
-    rgba: 0
 --- !u!114 &114048052878759226
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -8152,9 +8125,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _isDestroyable: 1
   _durability: 0
-  color:
-    serializedVersion: 2
-    rgba: 0
 --- !u!114 &114052743016471174
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -8168,9 +8138,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _isDestroyable: 1
   _durability: 0
-  color:
-    serializedVersion: 2
-    rgba: 0
 --- !u!114 &114056702173516266
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -8184,9 +8151,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _isDestroyable: 1
   _durability: 0
-  color:
-    serializedVersion: 2
-    rgba: 0
 --- !u!114 &114058062356332424
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -8200,9 +8164,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _isDestroyable: 1
   _durability: 0
-  color:
-    serializedVersion: 2
-    rgba: 0
 --- !u!114 &114075067632996932
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -8216,9 +8177,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _isDestroyable: 1
   _durability: 0
-  color:
-    serializedVersion: 2
-    rgba: 0
 --- !u!114 &114080317663285304
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -8232,9 +8190,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _isDestroyable: 1
   _durability: 0
-  color:
-    serializedVersion: 2
-    rgba: 0
 --- !u!114 &114086770606916696
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -8248,9 +8203,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _isDestroyable: 1
   _durability: 0
-  color:
-    serializedVersion: 2
-    rgba: 0
 --- !u!114 &114088154805583672
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -8264,9 +8216,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _isDestroyable: 1
   _durability: 1
-  color:
-    serializedVersion: 2
-    rgba: 0
 --- !u!114 &114089106037446358
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -8280,9 +8229,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _isDestroyable: 1
   _durability: 0
-  color:
-    serializedVersion: 2
-    rgba: 0
 --- !u!114 &114096832920428272
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -8296,9 +8242,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _isDestroyable: 1
   _durability: 0
-  color:
-    serializedVersion: 2
-    rgba: 0
 --- !u!114 &114099446853193744
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -8312,9 +8255,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _isDestroyable: 1
   _durability: 0
-  color:
-    serializedVersion: 2
-    rgba: 0
 --- !u!114 &114112333598340080
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -8328,9 +8268,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _isDestroyable: 1
   _durability: 0
-  color:
-    serializedVersion: 2
-    rgba: 0
 --- !u!114 &114122781356700406
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -8344,9 +8281,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _isDestroyable: 1
   _durability: 0
-  color:
-    serializedVersion: 2
-    rgba: 0
 --- !u!114 &114125881645477304
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -8360,9 +8294,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _isDestroyable: 1
   _durability: 2
-  color:
-    serializedVersion: 2
-    rgba: 0
 --- !u!114 &114129847730637732
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -8376,9 +8307,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _isDestroyable: 1
   _durability: 1
-  color:
-    serializedVersion: 2
-    rgba: 0
 --- !u!114 &114136141928678742
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -8392,9 +8320,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _isDestroyable: 1
   _durability: 0
-  color:
-    serializedVersion: 2
-    rgba: 0
 --- !u!114 &114142885314273930
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -8408,9 +8333,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _isDestroyable: 1
   _durability: 0
-  color:
-    serializedVersion: 2
-    rgba: 0
 --- !u!114 &114178801671741036
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -8424,9 +8346,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _isDestroyable: 1
   _durability: 0
-  color:
-    serializedVersion: 2
-    rgba: 0
 --- !u!114 &114209273614210720
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -8440,9 +8359,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _isDestroyable: 1
   _durability: 0
-  color:
-    serializedVersion: 2
-    rgba: 0
 --- !u!114 &114232273715720520
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -8456,9 +8372,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _isDestroyable: 1
   _durability: 0
-  color:
-    serializedVersion: 2
-    rgba: 0
 --- !u!114 &114244740382099676
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -8472,9 +8385,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _isDestroyable: 1
   _durability: 0
-  color:
-    serializedVersion: 2
-    rgba: 0
 --- !u!114 &114253501622162012
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -8488,9 +8398,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _isDestroyable: 1
   _durability: 0
-  color:
-    serializedVersion: 2
-    rgba: 0
 --- !u!114 &114264526159962446
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -8504,9 +8411,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _isDestroyable: 1
   _durability: 1
-  color:
-    serializedVersion: 2
-    rgba: 0
 --- !u!114 &114273120142375118
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -8520,9 +8424,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _isDestroyable: 1
   _durability: 1
-  color:
-    serializedVersion: 2
-    rgba: 0
 --- !u!114 &114278535696450816
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -8536,9 +8437,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _isDestroyable: 1
   _durability: 0
-  color:
-    serializedVersion: 2
-    rgba: 0
 --- !u!114 &114287854232297892
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -8552,9 +8450,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _isDestroyable: 1
   _durability: 1
-  color:
-    serializedVersion: 2
-    rgba: 0
 --- !u!114 &114298304844857970
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -8568,9 +8463,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _isDestroyable: 1
   _durability: 1
-  color:
-    serializedVersion: 2
-    rgba: 0
 --- !u!114 &114310465479340532
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -8584,9 +8476,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _isDestroyable: 1
   _durability: 0
-  color:
-    serializedVersion: 2
-    rgba: 0
 --- !u!114 &114327812440920566
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -8600,9 +8489,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _isDestroyable: 1
   _durability: 0
-  color:
-    serializedVersion: 2
-    rgba: 0
 --- !u!114 &114337552574281338
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -8616,9 +8502,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _isDestroyable: 1
   _durability: 1
-  color:
-    serializedVersion: 2
-    rgba: 0
 --- !u!114 &114346613227953094
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -8632,9 +8515,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _isDestroyable: 1
   _durability: 0
-  color:
-    serializedVersion: 2
-    rgba: 0
 --- !u!114 &114371420529986108
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -8648,9 +8528,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _isDestroyable: 1
   _durability: 0
-  color:
-    serializedVersion: 2
-    rgba: 0
 --- !u!114 &114372170879326750
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -8664,9 +8541,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _isDestroyable: 1
   _durability: 0
-  color:
-    serializedVersion: 2
-    rgba: 0
 --- !u!114 &114377514330344714
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -8680,9 +8554,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _isDestroyable: 1
   _durability: 0
-  color:
-    serializedVersion: 2
-    rgba: 0
 --- !u!114 &114379678115537042
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -8696,9 +8567,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _isDestroyable: 1
   _durability: 2
-  color:
-    serializedVersion: 2
-    rgba: 0
 --- !u!114 &114410343731055658
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -8712,9 +8580,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _isDestroyable: 1
   _durability: 0
-  color:
-    serializedVersion: 2
-    rgba: 0
 --- !u!114 &114426346240060578
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -8728,9 +8593,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _isDestroyable: 1
   _durability: 0
-  color:
-    serializedVersion: 2
-    rgba: 0
 --- !u!114 &114453146437379132
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -8744,9 +8606,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _isDestroyable: 1
   _durability: 0
-  color:
-    serializedVersion: 2
-    rgba: 0
 --- !u!114 &114492822529932788
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -8760,9 +8619,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _isDestroyable: 1
   _durability: 0
-  color:
-    serializedVersion: 2
-    rgba: 0
 --- !u!114 &114497604150393450
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -8776,9 +8632,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _isDestroyable: 1
   _durability: 2
-  color:
-    serializedVersion: 2
-    rgba: 0
 --- !u!114 &114499729051313626
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -8792,9 +8645,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _isDestroyable: 1
   _durability: 1
-  color:
-    serializedVersion: 2
-    rgba: 0
 --- !u!114 &114503338495519498
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -8808,9 +8658,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _isDestroyable: 1
   _durability: 0
-  color:
-    serializedVersion: 2
-    rgba: 0
 --- !u!114 &114514790314381330
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -8824,9 +8671,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _isDestroyable: 1
   _durability: 0
-  color:
-    serializedVersion: 2
-    rgba: 0
 --- !u!114 &114523954471095078
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -8840,9 +8684,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _isDestroyable: 1
   _durability: 0
-  color:
-    serializedVersion: 2
-    rgba: 0
 --- !u!114 &114524724434821374
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -8856,9 +8697,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _isDestroyable: 1
   _durability: 0
-  color:
-    serializedVersion: 2
-    rgba: 0
 --- !u!114 &114539721572938260
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -8872,9 +8710,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _isDestroyable: 1
   _durability: 0
-  color:
-    serializedVersion: 2
-    rgba: 0
 --- !u!114 &114558781213456984
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -8888,9 +8723,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _isDestroyable: 1
   _durability: 0
-  color:
-    serializedVersion: 2
-    rgba: 0
 --- !u!114 &114562813980005732
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -8904,9 +8736,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _isDestroyable: 1
   _durability: 0
-  color:
-    serializedVersion: 2
-    rgba: 0
 --- !u!114 &114564692435843498
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -8920,9 +8749,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _isDestroyable: 1
   _durability: 0
-  color:
-    serializedVersion: 2
-    rgba: 0
 --- !u!114 &114570254881786256
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -8936,9 +8762,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _isDestroyable: 1
   _durability: 0
-  color:
-    serializedVersion: 2
-    rgba: 0
 --- !u!114 &114576783836679866
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -8952,9 +8775,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _isDestroyable: 1
   _durability: 1
-  color:
-    serializedVersion: 2
-    rgba: 0
 --- !u!114 &114578623005210794
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -8968,9 +8788,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _isDestroyable: 1
   _durability: 0
-  color:
-    serializedVersion: 2
-    rgba: 0
 --- !u!114 &114579970113781340
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -8984,9 +8801,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _isDestroyable: 1
   _durability: 0
-  color:
-    serializedVersion: 2
-    rgba: 0
 --- !u!114 &114582039340945168
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -9000,9 +8814,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _isDestroyable: 1
   _durability: 0
-  color:
-    serializedVersion: 2
-    rgba: 0
 --- !u!114 &114587122396214442
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -9016,9 +8827,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _isDestroyable: 1
   _durability: 0
-  color:
-    serializedVersion: 2
-    rgba: 0
 --- !u!114 &114590941358134456
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -9032,9 +8840,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _isDestroyable: 1
   _durability: 1
-  color:
-    serializedVersion: 2
-    rgba: 0
 --- !u!114 &114591239838001884
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -9048,9 +8853,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _isDestroyable: 1
   _durability: 0
-  color:
-    serializedVersion: 2
-    rgba: 0
 --- !u!114 &114607022203526458
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -9064,9 +8866,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _isDestroyable: 1
   _durability: 1
-  color:
-    serializedVersion: 2
-    rgba: 0
 --- !u!114 &114609371295842386
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -9080,9 +8879,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _isDestroyable: 1
   _durability: 0
-  color:
-    serializedVersion: 2
-    rgba: 0
 --- !u!114 &114622350199900530
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -9096,9 +8892,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _isDestroyable: 1
   _durability: 0
-  color:
-    serializedVersion: 2
-    rgba: 0
 --- !u!114 &114630458274517256
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -9112,9 +8905,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _isDestroyable: 1
   _durability: 0
-  color:
-    serializedVersion: 2
-    rgba: 0
 --- !u!114 &114645048620112846
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -9128,9 +8918,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _isDestroyable: 1
   _durability: 1
-  color:
-    serializedVersion: 2
-    rgba: 0
 --- !u!114 &114659631841660402
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -9144,9 +8931,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _isDestroyable: 1
   _durability: 0
-  color:
-    serializedVersion: 2
-    rgba: 0
 --- !u!114 &114661709079307910
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -9160,9 +8944,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _isDestroyable: 1
   _durability: 0
-  color:
-    serializedVersion: 2
-    rgba: 0
 --- !u!114 &114661786793418304
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -9176,9 +8957,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _isDestroyable: 1
   _durability: 1
-  color:
-    serializedVersion: 2
-    rgba: 0
 --- !u!114 &114670783847817738
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -9192,9 +8970,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _isDestroyable: 1
   _durability: 0
-  color:
-    serializedVersion: 2
-    rgba: 0
 --- !u!114 &114679105128819098
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -9208,9 +8983,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _isDestroyable: 1
   _durability: 1
-  color:
-    serializedVersion: 2
-    rgba: 0
 --- !u!114 &114693830167869658
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -9224,9 +8996,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _isDestroyable: 1
   _durability: 0
-  color:
-    serializedVersion: 2
-    rgba: 0
 --- !u!114 &114699925582555254
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -9240,9 +9009,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _isDestroyable: 1
   _durability: 1
-  color:
-    serializedVersion: 2
-    rgba: 0
 --- !u!114 &114705408842136396
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -9256,9 +9022,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _isDestroyable: 1
   _durability: 0
-  color:
-    serializedVersion: 2
-    rgba: 0
 --- !u!114 &114713234057384592
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -9272,9 +9035,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _isDestroyable: 1
   _durability: 0
-  color:
-    serializedVersion: 2
-    rgba: 0
 --- !u!114 &114720433686409746
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -9288,9 +9048,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _isDestroyable: 1
   _durability: 0
-  color:
-    serializedVersion: 2
-    rgba: 0
 --- !u!114 &114743895447211144
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -9304,9 +9061,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _isDestroyable: 1
   _durability: 0
-  color:
-    serializedVersion: 2
-    rgba: 0
 --- !u!114 &114762931402487198
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -9320,9 +9074,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _isDestroyable: 1
   _durability: 0
-  color:
-    serializedVersion: 2
-    rgba: 0
 --- !u!114 &114763186328355788
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -9336,9 +9087,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _isDestroyable: 1
   _durability: 0
-  color:
-    serializedVersion: 2
-    rgba: 0
 --- !u!114 &114773354422517736
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -9352,9 +9100,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _isDestroyable: 1
   _durability: 0
-  color:
-    serializedVersion: 2
-    rgba: 0
 --- !u!114 &114773848534809660
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -9368,9 +9113,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _isDestroyable: 1
   _durability: 0
-  color:
-    serializedVersion: 2
-    rgba: 0
 --- !u!114 &114789925906658188
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -9384,9 +9126,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _isDestroyable: 1
   _durability: 0
-  color:
-    serializedVersion: 2
-    rgba: 0
 --- !u!114 &114805947390290012
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -9400,9 +9139,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _isDestroyable: 1
   _durability: 0
-  color:
-    serializedVersion: 2
-    rgba: 0
 --- !u!114 &114813405547348294
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -9416,9 +9152,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _isDestroyable: 1
   _durability: 0
-  color:
-    serializedVersion: 2
-    rgba: 0
 --- !u!114 &114831080284212584
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -9432,9 +9165,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _isDestroyable: 1
   _durability: 0
-  color:
-    serializedVersion: 2
-    rgba: 0
 --- !u!114 &114841003441375862
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -9448,9 +9178,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _isDestroyable: 1
   _durability: 0
-  color:
-    serializedVersion: 2
-    rgba: 0
 --- !u!114 &114849751118126222
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -9464,9 +9191,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _isDestroyable: 1
   _durability: 0
-  color:
-    serializedVersion: 2
-    rgba: 0
 --- !u!114 &114864820161160564
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -9480,9 +9204,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _isDestroyable: 1
   _durability: 0
-  color:
-    serializedVersion: 2
-    rgba: 0
 --- !u!114 &114877393605549780
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -9496,9 +9217,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _isDestroyable: 1
   _durability: 0
-  color:
-    serializedVersion: 2
-    rgba: 0
 --- !u!114 &114890250109882796
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -9512,9 +9230,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _isDestroyable: 1
   _durability: 0
-  color:
-    serializedVersion: 2
-    rgba: 0
 --- !u!114 &114915610688715618
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -9528,9 +9243,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _isDestroyable: 1
   _durability: 0
-  color:
-    serializedVersion: 2
-    rgba: 0
 --- !u!114 &114920003030192452
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -9544,9 +9256,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _isDestroyable: 1
   _durability: 1
-  color:
-    serializedVersion: 2
-    rgba: 0
 --- !u!114 &114921137056325078
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -9560,9 +9269,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _isDestroyable: 1
   _durability: 0
-  color:
-    serializedVersion: 2
-    rgba: 0
 --- !u!114 &114925975913300736
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -9576,9 +9282,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _isDestroyable: 1
   _durability: 0
-  color:
-    serializedVersion: 2
-    rgba: 0
 --- !u!114 &114927955154929278
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -9592,9 +9295,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _isDestroyable: 1
   _durability: 0
-  color:
-    serializedVersion: 2
-    rgba: 0
 --- !u!114 &114966363422400096
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -9608,9 +9308,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _isDestroyable: 1
   _durability: 1
-  color:
-    serializedVersion: 2
-    rgba: 0
 --- !u!114 &114970972023799528
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -9624,9 +9321,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _isDestroyable: 1
   _durability: 0
-  color:
-    serializedVersion: 2
-    rgba: 0
 --- !u!212 &212002588880904942
 SpriteRenderer:
   m_ObjectHideFlags: 1

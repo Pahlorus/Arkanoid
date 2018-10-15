@@ -25,7 +25,7 @@ GameObject:
   - component: {fileID: 114744677856738204}
   m_Layer: 0
   m_Name: TileRedPref
-  m_TagString: Untagged
+  m_TagString: Tile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -101,9 +101,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _isDestroyable: 1
   _durability: 2
-  color:
-    serializedVersion: 2
-    rgba: 0
 --- !u!212 &212692579877667640
 SpriteRenderer:
   m_ObjectHideFlags: 1

@@ -14,41 +14,32 @@ namespace Arkanoid
         [SerializeField]
         protected Sprite _sprite;
         [SerializeField]
-        protected  BatControler _batScript;
+        protected BatControler _batScript;
 
-        private float _speed;
-        private float _coordX = 0.0f;
-        private float _coordY = -3.5f;
+        private float _speed = 5f;
+        private float _coordX;
+        private float _coordY;
 
 
-        public virtual void PowerUpAction()
+        public virtual void PowerUpAction() { }
+
+        void OnTriggerEnter2D(Collider2D collider)
         {
-
+            if (collider.transform.tag == "Bat")
+                Destroy(this.gameObject);
         }
 
         void Awake()
         {
-            gameObject.SetActive(false);
-        }
-
-        void Start()
-        {
-            gameObject.SetActive(true);
+            _coordX = 0;
+            _coordY = 0;
         }
 
         internal void FixedUpdate()
         {
-            _coordX +=  Time.deltaTime * _speed;
-            transform.position = new Vector3(_coordX, _coordY);
+            _coordY -= Time.deltaTime * _speed;
+            transform.position = new Vector3(_coordX, _coordY, -1);
         }
-
-        void Update()
-        {
-
-        }
-
     }
-
-
 }
 
