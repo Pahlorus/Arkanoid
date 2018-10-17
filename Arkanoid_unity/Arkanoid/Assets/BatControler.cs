@@ -6,14 +6,18 @@ namespace Arkanoid
 {
     public class BatControler : MonoBehaviour
     {
-        private float _initialSpeedBat = 25.0f;
+        private float _initialBatSpeed = 25.0f;
+        private float _initialBaScalet = 1.0f;
+        private float _batScaleXMax = 1.5f;
+        private float _batScaleXtMin = 0.5f;
+        private float _batScaleXStep = 0.5f;
         private float _speedBat;
         private float _coordX = 0.0f;
         private float _coordY = -3.5f;
 
         internal void Awake()
         {
-            _speedBat = _initialSpeedBat;
+            _speedBat = _initialBatSpeed;
         }
 
         internal void FixedUpdate()
@@ -22,10 +26,17 @@ namespace Arkanoid
             transform.position = new Vector3(_coordX, _coordY);
         }
 
-        public void SpeedUp(int multiplier)
+
+        public void WidthUp()
         {
-            _speedBat = _initialSpeedBat * multiplier;
+            if (transform.localScale.x < _batScaleXMax)
+            {
+                Vector3 newScale = new Vector3(transform.localScale.x+_batScaleXStep, 1, 1);
+                transform.localScale = newScale;
+            }
+
         }
+
     }
 }
 

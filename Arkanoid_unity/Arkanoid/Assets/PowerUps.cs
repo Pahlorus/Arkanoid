@@ -1,38 +1,41 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 
 namespace Arkanoid
 {
     internal class PowerUps : MonoBehaviour
     {
-        [SerializeField]
-        protected GameObject _pellet;
-        [SerializeField]
-        protected GameObject _bat;
-        [SerializeField]
-        protected Sprite _sprite;
-        [SerializeField]
-        protected BatControler _batScript;
-
         private float _speed = 5f;
         private float _coordX;
         private float _coordY;
-
+        protected Game _game;
 
         public virtual void PowerUpAction() { }
+
+        public void Initialize(Game game)
+        {
+            _game = game;
+        }
 
         void OnTriggerEnter2D(Collider2D collider)
         {
             if (collider.transform.tag == "Bat")
+            {
+                PowerUpAction();
+                _game.SetPowerUpStatus();
                 Destroy(this.gameObject);
+            }
+            if (collider.transform.tag == "Bottom")
+            {
+                _game.SetPowerUpStatus();
+                Destroy(this.gameObject);
+            }
         }
 
-        void Awake()
+        void Start()
         {
-            _coordX = 0;
-            _coordY = 0;
+            _coordX = transform.position.x;
+            _coordY = transform.position.y;
         }
 
         internal void FixedUpdate()

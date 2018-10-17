@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 58556218734636956}
   - component: {fileID: 50559658377900404}
   m_Layer: 0
-  m_Name: BatSpeedPowerUp
+  m_Name: PelletSpeedPowerUp
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -89,10 +89,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c9768bbf4b15ab44afcc6f263d9f44a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _pellet: {fileID: 0}
-  _bat: {fileID: 0}
-  _sprite: {fileID: 0}
-  _batScript: {fileID: 0}
 --- !u!212 &212224809874109246
 SpriteRenderer:
   m_ObjectHideFlags: 1

@@ -1,11 +1,11 @@
 ﻿namespace Arkanoid
 {
-    internal class BatLivesUp : PowerUps
+    internal class PelletSpeedUp : PowerUps
     {
         public override void PowerUpAction()
         {
-
+            _game.PelletSpeedUp();
         }
     }
-}
 
+}

@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 namespace Arkanoid
 {
@@ -18,6 +19,9 @@ namespace Arkanoid
                 _durability -= 1;
             if (_durability == 0)
                 gameObject.SetActive(false);
+     
+                
         }
+
     }
 }

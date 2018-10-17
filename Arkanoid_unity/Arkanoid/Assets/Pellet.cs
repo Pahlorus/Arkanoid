@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 
@@ -10,18 +8,24 @@ namespace Arkanoid
     {
         [SerializeField]
         private Rigidbody2D _pelletRigidbody;
+
         private bool _isPelletActive;
         private float _coordX = 0.0f;
         private float _coordY = -3.28f;
+        private float _speed = 2f;
         private Vector3 _movement;
 
-        public event EventHandler BonusCreate;
-        // Use this for initialization
+
+        public event EventHandler OnCollision;
+
+        public void SpeedUp()
+        {
+            _pelletRigidbody.velocity = _pelletRigidbody.velocity * _speed;
+        }
 
         void Awake()
         {
             transform.position = new Vector3(_coordX, _coordY, -1);
-            _pelletRigidbody = GetComponent<Rigidbody2D>();
             _movement = new Vector3(-6, 6, 0);
             _isPelletActive = false;
         }
@@ -29,7 +33,7 @@ namespace Arkanoid
         void OnCollisionEnter2D(Collision2D collision)
         {
             if (collision.transform.tag == "Tile")
-            BonusCreate?.Invoke(this, EventArgs.Empty);
+                OnCollision?.Invoke(this, EventArgs.Empty);
         }
 
         void FixedUpdate()
@@ -38,14 +42,6 @@ namespace Arkanoid
             {
                 _pelletRigidbody.AddForce(_movement, ForceMode2D.Impulse);
             }
-        }
-
-
-
-        // Update is called once per frame
-        void Update()
-        {
-
         }
     }
 }
