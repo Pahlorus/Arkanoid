@@ -65,7 +65,7 @@ namespace Arkanoid
             {
                 int powerUpProbability = Random.Range(0, _probabilityIndex);
 
-                if (powerUpProbability <= 5)
+                if (powerUpProbability <= 2)
                 {
                     Vector3 pelletPosition = _pellet.transform.position;
                     PowerUps powerUpPref = _powerUpManager.PowerUpPrefGet();

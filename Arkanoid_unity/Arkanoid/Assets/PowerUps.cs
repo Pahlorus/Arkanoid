@@ -19,7 +19,8 @@ namespace Arkanoid
 
         void OnTriggerEnter2D(Collider2D collider)
         {
-            if (collider.transform.tag == "Bat")
+            
+            if (collider.GetComponent<BatControler>())
             {
                 PowerUpAction();
                 _game.SetPowerUpStatus();
