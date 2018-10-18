@@ -8,7 +8,7 @@ namespace Arkanoid
     public class BatControler : MonoBehaviour
     {
         private float _initialBatSpeed = 25.0f;
-        private float _initialBaScalet = 1.0f;
+        private float _initialBaScale = 1.0f;
         private float _batScaleXMax = 1.5f;
         private float _batScaleXtMin = 0.5f;
         private float _batScaleXStep = 0.5f;
@@ -31,7 +31,6 @@ namespace Arkanoid
             transform.position = new Vector3(_coordX, _coordY);
         }
 
-
         public void WidthUp()
         {
             if (transform.localScale.x < _batScaleXMax)
@@ -39,63 +38,23 @@ namespace Arkanoid
                 Vector3 newScale = new Vector3(transform.localScale.x+_batScaleXStep, 1, 1);
                 transform.localScale = newScale;
             }
-
         }
 
-
-        void OnTriggerEnter2D(Collider2D collider)
+        void OnCollisionEnter2D(Collision2D collision)
         {
 
-            if (collider.transform.tag == "Pellet")
+            if (collision.transform.tag == "Pellet")
             {
-                Rigidbody2D pelletRigidbody = collider.GetComponent<Rigidbody2D>();
-                Vector2 pelletVelocity = pelletRigidbody.velocity;
-                float pelletVelocityMagnitude = pelletVelocity.magnitude;
-                double angle = Math.Atan(pelletVelocity.y / pelletVelocity.x); ;
-                float batX = transform.position.x;
-                float pelletX = collider.transform.position.x;
-
-                if (pelletVelocity.x < 0 && pelletX >= batX && pelletX <= batX + _batHalfX)
-                {
-                    double newAngle = (pelletX - batX) * _anglePerLength;
-
-                    double newX = pelletVelocityMagnitude / Math.Cos(newAngle);
-                    double newY = -pelletVelocityMagnitude / Math.Sin(newAngle);
-                    pelletRigidbody.velocity = new Vector3((float)newX, (float)newY, 0);
-                }
-
-                if (pelletVelocity.x < 0 && pelletX < batX && pelletX >= batX - _batHalfX)
-                {
-                    double newAngle = (batX - pelletX) * _anglePerLength;
-
-                    double newX = -pelletVelocityMagnitude / Math.Cos(newAngle);
-                    double newY = -pelletVelocityMagnitude / Math.Sin(newAngle);
-                    pelletRigidbody.velocity = new Vector3((float)newX, (float)newY, 0);
-                }
-                if (pelletVelocity.x > 0 && pelletX >= batX && pelletX <= batX + _batHalfX)
-                {
-                    double newAngle = (pelletX - batX) * _anglePerLength;
-
-                    double newX = pelletVelocityMagnitude / Math.Cos(newAngle);
-                    double newY = -pelletVelocityMagnitude / Math.Sin(newAngle);
-                    pelletRigidbody.velocity = new Vector3((float)newX, (float)newY, 0);
-                }
-                if (pelletVelocity.x > 0 && pelletX < batX && pelletX >= batX - _batHalfX)
-                {
-                    double newAngle = (batX - pelletX) * _anglePerLength;
-
-                    double newX = -pelletVelocityMagnitude / Math.Cos(newAngle);
-                    double newY = -pelletVelocityMagnitude / Math.Sin(newAngle);
-                    pelletRigidbody.velocity = new Vector3((float)newX, (float)newY, 0);
-                }
-
-
+                ContactPoint2D contactPoint = collision.contacts[0];
+                float pelletVelocityMagnitude = contactPoint.collider.attachedRigidbody.velocity.magnitude;
+                float angleReflection = (contactPoint.point.x - transform.position.x)*1.348f;
+                double newX = pelletVelocityMagnitude * Math.Sin(angleReflection);
+                double newY = pelletVelocityMagnitude * Math.Cos(angleReflection)*(-1);
+                contactPoint.collider.attachedRigidbody.velocity = Vector3.zero;
+                Vector2 newVelocity= new Vector2((float)newX, (float)newY);
+                contactPoint.collider.attachedRigidbody.AddForce(newVelocity, ForceMode2D.Impulse);
             }
         }
-
-
-
-
     }
 }
 

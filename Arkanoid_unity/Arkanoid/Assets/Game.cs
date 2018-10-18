@@ -38,7 +38,7 @@ namespace Arkanoid
 
         void Awake()
         {
-            _pellet.OnCollision += BonusCreate;
+           // _pellet.OnCollision += BonusCreate;
         }
 
         public void PelletSpeedUp()
