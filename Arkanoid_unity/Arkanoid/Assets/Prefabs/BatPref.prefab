@@ -20,9 +20,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4720579256373900}
   - component: {fileID: 212919141757416974}
-  - component: {fileID: 61176735080252572}
   - component: {fileID: 114419165923100550}
   - component: {fileID: 50620385451940680}
+  - component: {fileID: 60709267659667550}
   m_Layer: 0
   m_Name: BatPref
   m_TagString: Bat
@@ -63,8 +63,8 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!61 &61176735080252572
-BoxCollider2D:
+--- !u!60 &60709267659667550
+PolygonCollider2D:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -72,7 +72,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 6200000, guid: 74fade5a1b2e265459a246fc1e1ac419, type: 2}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -85,9 +85,16 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 2.21, y: 0.21}
-  m_EdgeRadius: 0
+  m_Points:
+    m_Paths:
+    - - {x: -1.0790734, y: 0.08035469}
+      - {x: -1.133093, y: -0.106337786}
+      - {x: 1.1383555, y: -0.10833573}
+      - {x: 1.0783154, y: 0.0783155}
+    - - {x: -1.045, y: 0.044999998}
+      - {x: 1.055, y: 0.044999998}
+      - {x: 1.055, y: -0.055}
+      - {x: -1.045, y: -0.055}
 --- !u!114 &114419165923100550
 MonoBehaviour:
   m_ObjectHideFlags: 1

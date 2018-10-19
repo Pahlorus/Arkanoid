@@ -22,6 +22,7 @@ namespace Arkanoid
 
 
         public event EventHandler OnCollision;
+        public event EventHandler OnFailed;
 
         public void SpeedUp()
         {
@@ -37,8 +38,13 @@ namespace Arkanoid
 
         void OnCollisionEnter2D(Collision2D collision)
         {
-            if (collision.transform.tag == "Tile")
+            if (collision.collider.GetComponent<Tile>())
                 OnCollision?.Invoke(this, EventArgs.Empty);
+            if (collision.collider.transform.tag == "Bottom")
+            {
+                OnFailed?.Invoke(this, EventArgs.Empty);
+            }
+
         }
 
         void FixedUpdate()
