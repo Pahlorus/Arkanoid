@@ -7,21 +7,14 @@ namespace Arkanoid
 {
     public class BatControler : MonoBehaviour
     {
-
-      //  private float _initialBatSpeed = 35.0f;
-        private float _initialBaScale = 1.0f;
+        [SerializeField]
+        private float _speedBat;
         private float _batScaleXMax = 1.5f;
         private float _batScaleXtMin = 0.5f;
         private float _batScaleXStep = 0.5f;
-        [SerializeField]
-        private float _speedBat;
         private float _coordX = 0.0f;
         private float _coordY = -3.5f;
-        // TODO временно, далее определить из размеровов спрайта
-        private float _batHalfX = 0.105f;
-        // Приращение угла отражения в зависимости от расстояния до центра ракетки.
-        private float _anglePerLength = 14.124f;
-
+        private float _limitBorderX = 8.3f;
 
         internal void Awake()
         {
@@ -34,6 +27,16 @@ namespace Arkanoid
         {
 
             _coordX += Input.GetAxis("Mouse X") * Time.deltaTime * _speedBat;
+
+            if (transform.position.x>_limitBorderX)
+            {
+                _coordX = _limitBorderX;
+            }
+            if (transform.position.x < -_limitBorderX)
+            {
+                _coordX = -_limitBorderX;
+            }
+
         }
 
         internal void FixedUpdate()

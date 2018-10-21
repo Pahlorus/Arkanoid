@@ -7,8 +7,6 @@ namespace Arkanoid
     public class Game : MonoBehaviour
     {
         [SerializeField]
-        private GameObject _board;
-        [SerializeField]
         private GameObject _levelTiles;
         [SerializeField]
         private Pellet _pellet;
@@ -48,7 +46,9 @@ namespace Arkanoid
 
         void Awake()
         {
-            _lives = _initialLivesLimit = 3;
+            GameStart();
+            _ui.LivesTextOutput(_lives);
+            _ui.ScoreTextOutput(_scores);
             Cursor.visible = false;
             //  _pellet.OnCollision += _pellet_OnCollision;
             _pellet.OnFailed += _pellet_OnFailed; ;
@@ -57,7 +57,9 @@ namespace Arkanoid
 
         private void _pellet_OnFailed(object sender, System.EventArgs e)
         {
-
+            _lives -= 1;
+            CountLivesCheck();
+            _ui.LivesTextOutput(_lives);
         }
 
         private void _pellet_OnCollision(object sender, System.EventArgs e)
@@ -83,6 +85,18 @@ namespace Arkanoid
                 _isPowerUpActive = false;
             else
                 _isPowerUpActive = true;
+        }
+
+
+        private void CountLivesCheck()
+        {
+            if (_lives < 0)
+            {
+                _ui.GameOverMessage();
+                GameStop();
+            }
+
+
         }
 
 
