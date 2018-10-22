@@ -22,6 +22,7 @@ namespace Arkanoid
         private int _tilesCount;
         private int _lives;
         private int _scores;
+        private int _scoreStep = 10;
         private int _initialLivesLimit = 3;
         private int _probabilityPowerUp = 10;
 
@@ -70,6 +71,12 @@ namespace Arkanoid
             _uiManager.LivesTextOutput(_lives);
         }
 
+        public void ScoreUp()
+        {
+            _scores += _scoreStep;
+            _uiManager.ScoreTextOutput(_scores);
+        }
+
 
         public void SetPowerUpStatus()
         {
@@ -82,6 +89,7 @@ namespace Arkanoid
         private void Tile_OnTileDestroy(object sender, System.EventArgs e)
         {
             CountTilesAndCheckLevelCompleted();
+            ScoreUp();
         }
 
         private void _pellet_OnFailed(object sender, System.EventArgs e)
@@ -95,6 +103,7 @@ namespace Arkanoid
         private void _pellet_OnCollision(object sender, System.EventArgs e)
         {
             BonusCreate();
+            ScoreUp();
         }
 
         private void CountLivesCheck()
