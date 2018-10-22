@@ -20,6 +20,5 @@ namespace Arkanoid
             int arrayIndex = UnityEngine.Random.Range(0, _powerUpArrayLength);
             return _powerUpArray[arrayIndex];
         }
-
     }
 }

@@ -30,19 +30,16 @@ namespace Arkanoid
             {
                 message.SetActive(true);
             }
-            
         }
+
         internal void ScoreTextOutput(int score)
         {
             _scoreText.text = "Score: " + score.ToString();
-
         }
 
         internal void LivesTextOutput(int lives)
         {
             _livesText.text = "Lives: " + lives.ToString();
-
         }
-
     }
 }

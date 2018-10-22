@@ -4,7 +4,7 @@
     {
         public override void PowerUpAction()
         {
-
+            _game.LivesUp();
         }
     }
 }

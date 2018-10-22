@@ -3,7 +3,6 @@ using UnityEngine;
 
 namespace Arkanoid
 {
-
     public class Game : MonoBehaviour
     {
         [SerializeField]
@@ -19,13 +18,27 @@ namespace Arkanoid
         [SerializeField]
         private UIManager _uiManager;
 
-
         protected bool _isPowerUpActive;
         private int _tilesCount;
         private int _lives;
         private int _scores;
         private int _initialLivesLimit = 3;
         private int _probabilityPowerUp = 10;
+
+        void Awake()
+        {
+            Cursor.visible = false;
+            _tilesCount = _levelTiles.transform.childCount;
+            GameStart();
+            _uiManager.LivesTextOutput(_lives);
+            _uiManager.ScoreTextOutput(_scores);
+            _pellet.OnCollision += _pellet_OnCollision;
+            _pellet.OnFailed += _pellet_OnFailed;
+            foreach (Transform transform in _levelTiles.transform)
+            {
+                transform.GetComponent<Tile>().OnTileDestroy += Tile_OnTileDestroy;
+            }
+        }
 
         public void GameStart()
         {
@@ -41,19 +54,29 @@ namespace Arkanoid
             _pellet.SetOverBat();
         }
 
-        void Awake()
+        public void PelletSpeedUp()
         {
-            Cursor.visible = false;
-            _tilesCount = _levelTiles.transform.childCount;
-            GameStart();
+            _pellet.SpeedUp();
+        }
+
+        public void BatWidthUp()
+        {
+            _bat.WidthUp();
+        }
+
+        public void LivesUp()
+        {
+            _lives += 1;
             _uiManager.LivesTextOutput(_lives);
-            _uiManager.ScoreTextOutput(_scores);
-            _pellet.OnCollision += _pellet_OnCollision;
-            _pellet.OnFailed += _pellet_OnFailed;
-            foreach (Transform transform in _levelTiles.transform)
-            {
-                transform.GetComponent<Tile>().OnTileDestroy += Tile_OnTileDestroy;
-            }
+        }
+
+
+        public void SetPowerUpStatus()
+        {
+            if (_isPowerUpActive)
+                _isPowerUpActive = false;
+            else
+                _isPowerUpActive = true;
         }
 
         private void Tile_OnTileDestroy(object sender, System.EventArgs e)
@@ -74,24 +97,6 @@ namespace Arkanoid
             BonusCreate();
         }
 
-        public void PelletSpeedUp()
-        {
-            _pellet.SpeedUp();
-        }
-
-        public void BatWidthUp()
-        {
-            _bat.WidthUp();
-        }
-
-        public void SetPowerUpStatus()
-        {
-            if (_isPowerUpActive)
-                _isPowerUpActive = false;
-            else
-                _isPowerUpActive = true;
-        }
-
         private void CountLivesCheck()
         {
             if (_lives < 0)
@@ -100,7 +105,6 @@ namespace Arkanoid
                 GameStop();
             }
         }
-
 
         private void CountTilesAndCheckLevelCompleted()
         {
@@ -111,7 +115,6 @@ namespace Arkanoid
                 GameStop();
             }
         }
-
 
         private void BonusCreate()
         {
