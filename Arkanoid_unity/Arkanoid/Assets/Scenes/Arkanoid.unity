@@ -167,6 +167,16 @@ Prefab:
       propertyPath: m_Constraints
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114843373819932168, guid: 7852330882d82ce46bae7671d184ab14,
+        type: 2}
+      propertyPath: _bat
+      value: 
+      objectReference: {fileID: 1928367470}
+    - target: {fileID: 114843373819932168, guid: 7852330882d82ce46bae7671d184ab14,
+        type: 2}
+      propertyPath: _batTransform
+      value: 
+      objectReference: {fileID: 1928367470}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7852330882d82ce46bae7671d184ab14, type: 2}
   m_IsPrefabAsset: 0
@@ -519,6 +529,11 @@ Prefab:
         type: 2}
       propertyPath: _speedBat
       value: 35
+      objectReference: {fileID: 0}
+    - target: {fileID: 50620385451940680, guid: 38dbe105f11d4da40ae87585b2622fd1,
+        type: 2}
+      propertyPath: m_Constraints
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 60709267659667550, guid: 38dbe105f11d4da40ae87585b2622fd1, type: 2}

@@ -8,33 +8,47 @@ namespace Arkanoid
     {
         [SerializeField]
         private Rigidbody2D _pelletRigidbody;
+        [SerializeField]
+        private Transform _batTransform;
+
+        private Transform _pelletTransform;
+
+        private Vector3 _newPelletPosition;
+
+        private Vector3 _initialPelletPosition;
 
         private bool _isPelletActive;
-        private float _coordX = 0.0f;
-        private float _coordY = -3.28f;
         private float _speed = 2f;
-        // TODO временно, далее определить из размеровов спрайта
-        private float _batHalfX = 0.105f;
-        // Приращение угла отражения в зависимости от расстояния до центра ракетки.
-        private float _anglePerLength = 14.124f;
 
-        private Vector3 _movement;
+
+
+        private Vector3 _initialMovement;
 
 
         public event EventHandler OnCollision;
         public event EventHandler OnFailed;
+
+
+
+        void Awake()
+        {
+            _pelletTransform = transform;
+            _initialPelletPosition.y = _pelletTransform.position.y;
+            _initialMovement = new Vector3(-6, 6, 0);
+            _isPelletActive = false;
+        }
 
         public void SpeedUp()
         {
             _pelletRigidbody.velocity = _pelletRigidbody.velocity * _speed;
         }
 
-        void Awake()
+        public void SetOverBat()
         {
-            transform.position = new Vector3(_coordX, _coordY, -1);
-            _movement = new Vector3(-6, 6, 0);
             _isPelletActive = false;
+            _pelletRigidbody.velocity = Vector3.zero;
         }
+
 
         void OnCollisionEnter2D(Collision2D collision)
         {
@@ -51,8 +65,16 @@ namespace Arkanoid
         {
             if (Input.GetKeyDown(KeyCode.Space))
             {
-                _pelletRigidbody.AddForce(_movement, ForceMode2D.Impulse);
+                _pelletRigidbody.AddForce(_initialMovement, ForceMode2D.Impulse);
+                _isPelletActive = true;
             }
+
+            if (!_isPelletActive)
+            {
+                _pelletTransform.position = new Vector3(_batTransform.position.x, _initialPelletPosition.y, -1);
+            }
+
+
         }
     }
 }

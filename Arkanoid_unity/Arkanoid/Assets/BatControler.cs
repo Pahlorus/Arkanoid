@@ -15,46 +15,46 @@ namespace Arkanoid
         private float _coordX = 0.0f;
         private float _coordY = -3.5f;
         private float _limitBorderX = 8.3f;
+        private Transform _batTransform;
 
         internal void Awake()
         {
             //_speedBat = _initialBatSpeed;
+            _batTransform = transform;
 
         }
 
 
-        internal void Update ()
+        internal void Update()
         {
 
-            _coordX += Input.GetAxis("Mouse X") * Time.deltaTime * _speedBat;
-
-            if (transform.position.x>_limitBorderX)
-            {
-                _coordX = _limitBorderX;
-            }
-            if (transform.position.x < -_limitBorderX)
-            {
-                _coordX = -_limitBorderX;
-            }
 
         }
 
         internal void FixedUpdate()
         {
-            //_coordX += Input.mousePosition.x * Time.deltaTime * _speedBat;
-            
-            //_coordX += Input.GetAxis("Horizontal") * Time.deltaTime * _speedBat;
-
-
-            transform.position = new Vector3(_coordX, _coordY);
+            if (_batTransform.position.x > _limitBorderX)
+            {
+                _coordX = _limitBorderX;
+            }
+            else if (_batTransform.position.x < -_limitBorderX)
+            {
+                _coordX = -_limitBorderX;
+            }
+            else
+            {
+                //_coordX += Input.GetAxis("Horizontal") * Time.deltaTime * _speedBat;
+                _coordX += Input.GetAxis("Mouse X") * Time.deltaTime * _speedBat;
+            }
+            _batTransform.position = new Vector3(_coordX, _coordY);
         }
 
         public void WidthUp()
         {
-            if (transform.localScale.x < _batScaleXMax)
+            if (_batTransform.localScale.x < _batScaleXMax)
             {
-                Vector3 newScale = new Vector3(transform.localScale.x + _batScaleXStep, 1, 1);
-                transform.localScale = newScale;
+                Vector3 newScale = new Vector3(_batTransform.localScale.x + _batScaleXStep, 1, 1);
+                _batTransform.localScale = newScale;
             }
         }
 
@@ -64,15 +64,15 @@ namespace Arkanoid
             {
                 ContactPoint2D contactPoint = collision.contacts[0];
 
-                    float pelletVelocityMagnitude = contactPoint.collider.attachedRigidbody.velocity.magnitude;
-                    float angleReflection = (contactPoint.point.x - transform.position.x) * 1.185f;
-                    double newX = pelletVelocityMagnitude * Math.Sin(angleReflection);
-                    double newY =(-1)*pelletVelocityMagnitude * Math.Cos(angleReflection);
+                float pelletVelocityMagnitude = contactPoint.collider.attachedRigidbody.velocity.magnitude;
+                float angleReflection = (contactPoint.point.x - transform.position.x) * 1.185f;
+                double newX = pelletVelocityMagnitude * Math.Sin(angleReflection);
+                double newY = (-1) * pelletVelocityMagnitude * Math.Cos(angleReflection);
 
-                    contactPoint.collider.attachedRigidbody.velocity = Vector3.zero;
-                    Vector2 newVelocity = new Vector2((float)newX, (float)newY);
-                    contactPoint.collider.attachedRigidbody.AddForce(newVelocity, ForceMode2D.Impulse);
-        
+                contactPoint.collider.attachedRigidbody.velocity = Vector3.zero;
+                Vector2 newVelocity = new Vector2((float)newX, (float)newY);
+                contactPoint.collider.attachedRigidbody.AddForce(newVelocity, ForceMode2D.Impulse);
+
             }
         }
     }
