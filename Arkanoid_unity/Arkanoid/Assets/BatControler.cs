@@ -15,23 +15,20 @@ namespace Arkanoid
         private float _coordX = 0.0f;
         private float _coordY = -3.5f;
         private float _limitBorderX = 8.3f;
+        private Vector3 _movement;
         private Transform _batTransform;
+        private Rigidbody2D _batRigidbody2D;
 
         internal void Awake()
         {
             //_speedBat = _initialBatSpeed;
             _batTransform = transform;
+            _batRigidbody2D = GetComponent<Rigidbody2D>();
 
         }
 
 
         internal void Update()
-        {
-
-
-        }
-
-        internal void FixedUpdate()
         {
             if (_batTransform.position.x > _limitBorderX)
             {
@@ -44,9 +41,23 @@ namespace Arkanoid
             else
             {
                 //_coordX += Input.GetAxis("Horizontal") * Time.deltaTime * _speedBat;
-                _coordX += Input.GetAxis("Mouse X") * Time.deltaTime * _speedBat;
+                // _coordX += Input.GetAxis("Mouse X") * Time.fixedDeltaTime * _speedBat;
+                // _coordX += Input.GetAxis("Mouse X");
+
             }
-            _batTransform.position = new Vector3(_coordX, _coordY);
+            _movement = new Vector2(Input.GetAxis("Mouse X"), 0) ;
+           
+
+        }
+
+        internal void FixedUpdate()
+        {
+
+            _batRigidbody2D.MovePosition(_batTransform.position + _movement * Time.fixedDeltaTime * _speedBat);
+
+            //_batRigidbody2D.velocity = new Vector2(Input.GetAxis("Mouse X")*Time.fixedDeltaTime * 600f, 0);
+
+            //_batTransform.position = new Vector3(_coordX, _coordY);
         }
 
         public void WidthUp()
@@ -72,6 +83,9 @@ namespace Arkanoid
                 contactPoint.collider.attachedRigidbody.velocity = Vector3.zero;
                 Vector2 newVelocity = new Vector2((float)newX, (float)newY);
                 contactPoint.collider.attachedRigidbody.AddForce(newVelocity, ForceMode2D.Impulse);
+
+
+
 
             }
         }

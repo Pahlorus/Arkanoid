@@ -15,6 +15,7 @@ namespace Arkanoid
         private Vector3 _newPelletPosition;
         private Vector3 _initialPelletPosition;
         private bool _isPelletActive;
+        private bool _isSpaceKeyDown;
         private float _speed = 2f;
         private Vector3 _initialMovement;
 
@@ -50,13 +51,22 @@ namespace Arkanoid
             }
         }
 
+        void Update()
+        {
+            if (!_isSpaceKeyDown)
+                _isSpaceKeyDown = Input.GetKeyDown(KeyCode.Space);
+        }
+
+
         void FixedUpdate()
         {
-            if (Input.GetKeyDown(KeyCode.Space))
+            if (_isSpaceKeyDown)
             {
                 _pelletRigidbody.AddForce(_initialMovement, ForceMode2D.Impulse);
+                _isSpaceKeyDown = false;
                 _isPelletActive = true;
             }
+
 
             if (!_isPelletActive)
             {

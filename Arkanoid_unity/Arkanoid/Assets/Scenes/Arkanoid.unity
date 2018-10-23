@@ -177,6 +177,10 @@ Prefab:
       propertyPath: _batTransform
       value: 
       objectReference: {fileID: 1928367470}
+    - target: {fileID: 1793664132291636, guid: 7852330882d82ce46bae7671d184ab14, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7852330882d82ce46bae7671d184ab14, type: 2}
   m_IsPrefabAsset: 0
@@ -528,7 +532,7 @@ Prefab:
     - target: {fileID: 114419165923100550, guid: 38dbe105f11d4da40ae87585b2622fd1,
         type: 2}
       propertyPath: _speedBat
-      value: 35
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 50620385451940680, guid: 38dbe105f11d4da40ae87585b2622fd1,
         type: 2}
