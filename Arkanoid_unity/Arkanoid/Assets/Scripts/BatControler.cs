@@ -9,55 +9,46 @@ namespace Arkanoid
     {
         [SerializeField]
         private float _speedBat;
+
+        private float _coordX;
+        private float _coordY;
+
         private float _batScaleXMax = 1.5f;
         private float _batScaleXtMin = 0.5f;
         private float _batScaleXStep = 0.5f;
-        private float _coordX = 0.0f;
-        private float _coordY = -3.5f;
         private float _limitBorderX = 8.3f;
+        private float _maxAngleRebound = 75f;
         private Vector3 _movement;
         private Transform _batTransform;
+        private SpriteRenderer _spriteRenderer;
         private Rigidbody2D _batRigidbody2D;
 
         internal void Awake()
         {
-            //_speedBat = _initialBatSpeed;
             _batTransform = transform;
+            _coordY = _batTransform.position.y;
             _batRigidbody2D = GetComponent<Rigidbody2D>();
-
+            _spriteRenderer = GetComponent<SpriteRenderer>();
         }
-
 
         internal void Update()
         {
-            if (_batTransform.position.x > _limitBorderX)
+            if (_batRigidbody2D.position.x > _limitBorderX)
             {
                 _coordX = _limitBorderX;
+                _batTransform.position = new Vector2(_coordX, _coordY);
             }
-            else if (_batTransform.position.x < -_limitBorderX)
+            if (_batRigidbody2D.position.x < -_limitBorderX)
             {
                 _coordX = -_limitBorderX;
+                _batTransform.position = new Vector2(_coordX, _coordY);
             }
-            else
-            {
-                //_coordX += Input.GetAxis("Horizontal") * Time.deltaTime * _speedBat;
-                // _coordX += Input.GetAxis("Mouse X") * Time.fixedDeltaTime * _speedBat;
-                // _coordX += Input.GetAxis("Mouse X");
-
-            }
-            _movement = new Vector2(Input.GetAxis("Mouse X"), 0) ;
-           
-
+            _movement = new Vector2(Input.GetAxis("Mouse X"), 0);
         }
 
         internal void FixedUpdate()
         {
-
             _batRigidbody2D.MovePosition(_batTransform.position + _movement * Time.fixedDeltaTime * _speedBat);
-
-            //_batRigidbody2D.velocity = new Vector2(Input.GetAxis("Mouse X")*Time.fixedDeltaTime * 600f, 0);
-
-            //_batTransform.position = new Vector3(_coordX, _coordY);
         }
 
         public void WidthUp()
@@ -75,18 +66,27 @@ namespace Arkanoid
             {
                 ContactPoint2D contactPoint = collision.contacts[0];
 
-                float pelletVelocityMagnitude = contactPoint.collider.attachedRigidbody.velocity.magnitude;
-                float angleReflection = (contactPoint.point.x - transform.position.x) * 1.185f;
-                double newX = pelletVelocityMagnitude * Math.Sin(angleReflection);
-                double newY = (-1) * pelletVelocityMagnitude * Math.Cos(angleReflection);
+                float deviationСoefficient = (_maxAngleRebound * Mathf.Deg2Rad) / (_spriteRenderer.sprite.rect.width / 200);
 
+                float pelletVelocityMagnitude = contactPoint.collider.attachedRigidbody.velocity.magnitude;
+
+                float angleReflection;
+
+                if (Math.Abs(contactPoint.point.x - transform.position.x) >= _spriteRenderer.sprite.rect.width / 200)
+                    angleReflection = 1.309f;
+                else
+                    angleReflection = (contactPoint.point.x - transform.position.x) * deviationСoefficient;
+                double newX;
+
+                if (contactPoint.point.x - transform.position.x > 0)
+                    newX = pelletVelocityMagnitude * Math.Sin(Math.Abs(angleReflection));
+                else
+                    newX = (-1) * pelletVelocityMagnitude * Math.Sin(Math.Abs(angleReflection));
+
+                double newY = pelletVelocityMagnitude * Math.Cos(Math.Abs(angleReflection));
                 contactPoint.collider.attachedRigidbody.velocity = Vector3.zero;
                 Vector2 newVelocity = new Vector2((float)newX, (float)newY);
                 contactPoint.collider.attachedRigidbody.AddForce(newVelocity, ForceMode2D.Impulse);
-
-
-
-
             }
         }
     }

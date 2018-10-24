@@ -165,7 +165,7 @@ Prefab:
     - target: {fileID: 50420425021987508, guid: 7852330882d82ce46bae7671d184ab14,
         type: 2}
       propertyPath: m_Constraints
-      value: 0
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 114843373819932168, guid: 7852330882d82ce46bae7671d184ab14,
         type: 2}
@@ -180,6 +180,16 @@ Prefab:
     - target: {fileID: 1793664132291636, guid: 7852330882d82ce46bae7671d184ab14, type: 2}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114843373819932168, guid: 7852330882d82ce46bae7671d184ab14,
+        type: 2}
+      propertyPath: _initialMovement.x
+      value: -6
+      objectReference: {fileID: 0}
+    - target: {fileID: 114843373819932168, guid: 7852330882d82ce46bae7671d184ab14,
+        type: 2}
+      propertyPath: _initialMovement.y
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7852330882d82ce46bae7671d184ab14, type: 2}
@@ -1038,8 +1048,8 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1345700979961284, guid: 38dbe105f11d4da40ae87585b2622fd1,
     type: 2}
   m_PrefabInternal: {fileID: 530612365}
---- !u!61 &899231281
-BoxCollider2D:
+--- !u!68 &899231281
+EdgeCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
@@ -1051,18 +1061,15 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2.21, y: 0.21}
-    newSize: {x: 2.21, y: 0.21}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 2.21, y: 0.21}
   m_EdgeRadius: 0
+  m_Points:
+  - {x: -0.8361835, y: -0.084112644}
+  - {x: -1.0799183, y: 0.08323312}
+  - {x: -0.79288745, y: 0.083127975}
+  - {x: 0.84198695, y: 0.08313918}
+  - {x: 1.0912375, y: 0.08266425}
+  - {x: 0.8504521, y: -0.07988763}
+  - {x: -0.83345425, y: -0.086079836}
 --- !u!1 &1084656785
 GameObject:
   m_ObjectHideFlags: 0

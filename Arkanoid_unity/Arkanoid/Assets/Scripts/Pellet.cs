@@ -10,6 +10,8 @@ namespace Arkanoid
         private Rigidbody2D _pelletRigidbody;
         [SerializeField]
         private Transform _batTransform;
+        [SerializeField]
+        private Vector3 _initialMovement;
 
         private Transform _pelletTransform;
         private Vector3 _newPelletPosition;
@@ -17,7 +19,6 @@ namespace Arkanoid
         private bool _isPelletActive;
         private bool _isSpaceKeyDown;
         private float _speed = 2f;
-        private Vector3 _initialMovement;
 
         public event EventHandler OnCollision;
         public event EventHandler OnFailed;
@@ -26,7 +27,6 @@ namespace Arkanoid
         {
             _pelletTransform = transform;
             _initialPelletPosition.y = _pelletTransform.position.y;
-            _initialMovement = new Vector3(-7, 7, 0);
             _isPelletActive = false;
         }
 
@@ -35,7 +35,7 @@ namespace Arkanoid
             _pelletRigidbody.velocity = _pelletRigidbody.velocity * _speed;
         }
 
-        public void SetOverBat()
+        public void PelletInActive()
         {
             _isPelletActive = false;
             _pelletRigidbody.velocity = Vector3.zero;
@@ -57,16 +57,14 @@ namespace Arkanoid
                 _isSpaceKeyDown = Input.GetKeyDown(KeyCode.Space);
         }
 
-
         void FixedUpdate()
         {
-            if (_isSpaceKeyDown)
+            if (_isSpaceKeyDown && !_isPelletActive)
             {
                 _pelletRigidbody.AddForce(_initialMovement, ForceMode2D.Impulse);
                 _isSpaceKeyDown = false;
                 _isPelletActive = true;
             }
-
 
             if (!_isPelletActive)
             {

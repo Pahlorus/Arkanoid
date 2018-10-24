@@ -52,7 +52,9 @@ namespace Arkanoid
         {
             enabled = false;
             _bat.enabled = false;
-            _pellet.SetOverBat();
+            _pellet.PelletInActive();
+            _pellet.enabled = false;
+            _pellet.gameObject.SetActive(false);
         }
 
         public void PelletSpeedUp()
@@ -77,7 +79,6 @@ namespace Arkanoid
             _uiManager.ScoreTextOutput(_scores);
         }
 
-
         public void SetPowerUpStatus()
         {
             if (_isPowerUpActive)
@@ -97,7 +98,7 @@ namespace Arkanoid
             _lives -= 1;
             CountLivesCheck();
             _uiManager.LivesTextOutput(_lives);
-            _pellet.SetOverBat();
+            _pellet.PelletInActive();
         }
 
         private void _pellet_OnCollision(object sender, System.EventArgs e)
@@ -142,6 +143,12 @@ namespace Arkanoid
                     powerUp.transform.position = pelletPosition;
                 }
             }
+        }
+
+        void Update()
+        {
+            if(Input.GetKeyDown(KeyCode.Escape))
+                Application.Quit();
         }
     }
 }
