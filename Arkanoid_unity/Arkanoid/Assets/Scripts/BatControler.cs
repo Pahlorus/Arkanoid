@@ -31,6 +31,15 @@ namespace Arkanoid
             _spriteRenderer = GetComponent<SpriteRenderer>();
         }
 
+        public void WidthUp()
+        {
+            if (_batTransform.localScale.x < _batScaleXMax)
+            {
+                Vector3 newScale = new Vector3(_batTransform.localScale.x + _batScaleXStep, 1, 1);
+                _batTransform.localScale = newScale;
+            }
+        }
+
         internal void Update()
         {
             if (_batRigidbody2D.position.x > _limitBorderX)
@@ -49,15 +58,6 @@ namespace Arkanoid
         internal void FixedUpdate()
         {
             _batRigidbody2D.MovePosition(_batTransform.position + _movement * Time.fixedDeltaTime * _speedBat);
-        }
-
-        public void WidthUp()
-        {
-            if (_batTransform.localScale.x < _batScaleXMax)
-            {
-                Vector3 newScale = new Vector3(_batTransform.localScale.x + _batScaleXStep, 1, 1);
-                _batTransform.localScale = newScale;
-            }
         }
 
         void OnCollisionEnter2D(Collision2D collision)
