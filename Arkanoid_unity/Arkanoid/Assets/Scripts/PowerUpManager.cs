@@ -7,7 +7,7 @@ namespace Arkanoid
     internal class PowerUpManager : MonoBehaviour
     {
         [SerializeField]
-        private PowerUps[] _powerUpArray;
+        private PowerUp[] _powerUpArray;
         private int _powerUpArrayLength;
 
         private void Awake()
@@ -15,7 +15,7 @@ namespace Arkanoid
             _powerUpArrayLength = this.GetComponent<PowerUpManager>()._powerUpArray.Length;
         }
 
-        internal PowerUps PowerUpPrefGet()
+        internal PowerUp PowerUpPrefGet()
         {
             int arrayIndex = UnityEngine.Random.Range(0, _powerUpArrayLength);
             return _powerUpArray[arrayIndex];

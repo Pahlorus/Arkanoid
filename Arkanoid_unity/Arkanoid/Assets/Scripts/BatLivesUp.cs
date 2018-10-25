@@ -1,6 +1,6 @@
 ﻿namespace Arkanoid
 {
-    internal class BatLivesUp : PowerUps
+    internal class BatLivesUp : PowerUp
     {
         public override void PowerUpAction()
         {

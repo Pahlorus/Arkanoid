@@ -135,8 +135,8 @@ namespace Arkanoid
                 if (powerUpProbability <= 2)
                 {
                     Vector3 pelletPosition = _pellet.transform.position;
-                    PowerUps powerUpPref = _powerUpManager.PowerUpPrefGet();
-                    PowerUps powerUp = Instantiate(powerUpPref, _powerUpManager.transform);
+                    PowerUp powerUpPref = _powerUpManager.PowerUpPrefGet();
+                    PowerUp powerUp = Instantiate(powerUpPref, _powerUpManager.transform);
                     SetPowerUpStatus();
                     powerUp.Initialize(this);
                     powerUp.transform.localScale = Vector3.one;

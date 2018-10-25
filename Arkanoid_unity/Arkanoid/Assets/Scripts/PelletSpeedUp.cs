@@ -1,6 +1,6 @@
 ﻿namespace Arkanoid
 {
-    internal class PelletSpeedUp : PowerUps
+    internal class PelletSpeedUp : PowerUp
     {
         public override void PowerUpAction()
         {

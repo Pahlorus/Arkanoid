@@ -67,23 +67,16 @@ namespace Arkanoid
                 ContactPoint2D contactPoint = collision.contacts[0];
 
                 float deviationСoefficient = (_maxAngleRebound * Mathf.Deg2Rad) / (_spriteRenderer.sprite.rect.width / 200);
-
                 float pelletVelocityMagnitude = contactPoint.collider.attachedRigidbody.velocity.magnitude;
-
                 float angleReflection;
 
-                if (Math.Abs(contactPoint.point.x - transform.position.x) >= _spriteRenderer.sprite.rect.width / 200)
-                    angleReflection = 1.309f;
+                if (Mathf.Abs(contactPoint.point.x - transform.position.x) >= _spriteRenderer.sprite.rect.width / 200)
+                    angleReflection = _maxAngleRebound * Mathf.Deg2Rad;
                 else
                     angleReflection = (contactPoint.point.x - transform.position.x) * deviationСoefficient;
-                double newX;
-
-                if (contactPoint.point.x - transform.position.x > 0)
-                    newX = pelletVelocityMagnitude * Math.Sin(Math.Abs(angleReflection));
-                else
-                    newX = (-1) * pelletVelocityMagnitude * Math.Sin(Math.Abs(angleReflection));
-
-                double newY = pelletVelocityMagnitude * Math.Cos(Math.Abs(angleReflection));
+ 
+                double newX = Mathf.Sign(contactPoint.point.x - transform.position.x) * pelletVelocityMagnitude * Mathf.Sin(Mathf.Abs(angleReflection));
+                double newY = pelletVelocityMagnitude * Mathf.Cos(Mathf.Abs(angleReflection));
                 contactPoint.collider.attachedRigidbody.velocity = Vector3.zero;
                 Vector2 newVelocity = new Vector2((float)newX, (float)newY);
                 contactPoint.collider.attachedRigidbody.AddForce(newVelocity, ForceMode2D.Impulse);

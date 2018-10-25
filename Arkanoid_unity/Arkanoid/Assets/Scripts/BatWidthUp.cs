@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Arkanoid
 {
-    internal class BatWidthUp : PowerUps
+    internal class BatWidthUp : PowerUp
     {
         public override void PowerUpAction()
         {

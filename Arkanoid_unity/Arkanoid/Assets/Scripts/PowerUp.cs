@@ -3,7 +3,7 @@
 
 namespace Arkanoid
 {
-    internal class PowerUps : MonoBehaviour
+    internal class PowerUp : MonoBehaviour
     {
         private float _speed = 5f;
         private float _coordX;
