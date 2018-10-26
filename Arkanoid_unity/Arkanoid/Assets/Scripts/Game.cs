@@ -1,4 +1,5 @@
-﻿
+﻿using System.Collections;
+using UnityEngine.SceneManagement;
 using UnityEngine;
 
 namespace Arkanoid
@@ -28,6 +29,7 @@ namespace Arkanoid
 
         void Awake()
         {
+            SceneManager.LoadSceneAsync(1, LoadSceneMode.Additive);
             Cursor.visible = false;
             _tilesCount = _levelTiles.transform.childCount;
             GameStart();
@@ -40,6 +42,9 @@ namespace Arkanoid
                 transform.GetComponent<Tile>().OnTileDestroy += Tile_OnTileDestroy;
             }
         }
+
+
+
 
         public void GameStart()
         {
@@ -150,6 +155,11 @@ namespace Arkanoid
             if(Input.GetKeyDown(KeyCode.Escape))
                 Application.Quit();
         }
+
+
+
+
+
     }
 }
 
