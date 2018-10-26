@@ -122,13 +122,26 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1688986602}
+  - component: {fileID: 137579087}
   m_Layer: 0
-  m_Name: LevelTiles
+  m_Name: LevelManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &137579087
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 137579086}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be4d8c217fbdce044a973d452a6a267e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  level: []
 --- !u!1001 &288780558
 Prefab:
   m_ObjectHideFlags: 0
@@ -1276,12 +1289,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f33204fd6bc936b4bac7583a267760f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _levelTiles: {fileID: 137579086}
   _pellet: {fileID: 1735160487}
   _bat: {fileID: 1391507117}
   _powerUpManager: {fileID: 295411532}
   _powerUp: {fileID: 114964137485870346, guid: efebddd51783a32488deb0637db8cf17, type: 2}
   _uiManager: {fileID: 1084656790}
+  _levelManager: {fileID: 137579087}
 --- !u!4 &1928367470 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4720579256373900, guid: 38dbe105f11d4da40ae87585b2622fd1,

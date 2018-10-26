@@ -1,13 +1,10 @@
-﻿using System.Collections;
-using UnityEngine.SceneManagement;
+﻿
 using UnityEngine;
 
 namespace Arkanoid
 {
     public class Game : MonoBehaviour
     {
-        [SerializeField]
-        private GameObject _levelTiles;
         [SerializeField]
         private Pellet _pellet;
         [SerializeField]
@@ -16,41 +13,50 @@ namespace Arkanoid
         private PowerUpManager _powerUpManager;
         [SerializeField]
         private PelletSpeedUp _powerUp;
-        [SerializeField]
-        private UIManager _uiManager;
+        [SerializeField] private UIManager _uiManager;
 
         protected bool _isPowerUpActive;
-        private int _tilesCount;
+        [SerializeField] private LevelManager _levelManager;
         private int _lives;
         private int _scores;
+        private int _tilesCount;
         private int _scoreStep = 10;
         private int _initialLivesLimit = 3;
         private int _probabilityPowerUp = 10;
 
+        private Transform _levelTiles;
+
+
+
         void Awake()
         {
-            SceneManager.LoadSceneAsync(1, LoadSceneMode.Additive);
             Cursor.visible = false;
-            _tilesCount = _levelTiles.transform.childCount;
+            _levelManager.LoadLevel(1);
             GameStart();
             _uiManager.LivesTextOutput(_lives);
             _uiManager.ScoreTextOutput(_scores);
             _pellet.OnCollision += _pellet_OnCollision;
             _pellet.OnFailed += _pellet_OnFailed;
-            foreach (Transform transform in _levelTiles.transform)
+            _levelManager.OnLevelLoadCompleted += _levelManager_OnLevelLoadCompleted;
+        }
+
+        private void _levelManager_OnLevelLoadCompleted(object sender, System.EventArgs e)
+        {
+            _tilesCount = _levelManager.TilesCount;
+            _levelTiles = _levelManager.LevelTiles;
+
+            foreach (Transform transform in _levelTiles)
             {
                 transform.GetComponent<Tile>().OnTileDestroy += Tile_OnTileDestroy;
             }
         }
-
-
-
 
         public void GameStart()
         {
             _lives = _initialLivesLimit;
             _scores = 0;
             _isPowerUpActive = false;
+            
         }
 
         public void GameStop()
@@ -152,14 +158,9 @@ namespace Arkanoid
 
         void Update()
         {
-            if(Input.GetKeyDown(KeyCode.Escape))
+            if (Input.GetKeyDown(KeyCode.Escape))
                 Application.Quit();
         }
-
-
-
-
-
     }
 }
 

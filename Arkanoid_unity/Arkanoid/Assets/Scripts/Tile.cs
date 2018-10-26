@@ -10,7 +10,7 @@ namespace Arkanoid
         [SerializeField]
         private int _durability;
 
-        public event EventHandler OnTileDestroy;
+        internal event EventHandler OnTileDestroy;
 
         void OnCollisionEnter2D()
         {
