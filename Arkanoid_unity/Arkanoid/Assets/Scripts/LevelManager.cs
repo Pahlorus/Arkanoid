@@ -28,14 +28,11 @@ namespace Arkanoid
             {
                 yield return null;
             }
-            if (_asyncOperation.isDone)
-            {
-                _levelScene = SceneManager.GetSceneAt(1);
-                level = _levelScene.GetRootGameObjects();
-                _levelTiles = level[0].transform;
-                _tilesCount = _levelTiles.childCount;
-                OnLevelLoadCompleted?.Invoke(this, EventArgs.Empty);
-            }
+            _levelScene = SceneManager.GetSceneByBuildIndex(3);
+            level = _levelScene.GetRootGameObjects();
+            _levelTiles = level[0].transform;
+            _tilesCount = _levelTiles.childCount;
+            OnLevelLoadCompleted?.Invoke(this, EventArgs.Empty);
         }
 
         internal void LoadLevel(int indexLevel)
