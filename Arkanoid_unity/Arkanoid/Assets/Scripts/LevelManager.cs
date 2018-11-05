@@ -19,16 +19,15 @@ namespace Arkanoid
         internal int TilesCount { get { return _tilesCount; } }
         internal Transform LevelTiles { get { return _levelTiles; } }
 
-        IEnumerator LoadScene()
+        IEnumerator LoadScene(int indexLevel)
         {
             yield return null;
-            _asyncOperation = SceneManager.LoadSceneAsync(3, LoadSceneMode.Additive);
-
+            _asyncOperation = SceneManager.LoadSceneAsync(indexLevel, LoadSceneMode.Additive);
             while (!_asyncOperation.isDone)
             {
                 yield return null;
             }
-            _levelScene = SceneManager.GetSceneByBuildIndex(3);
+            _levelScene = SceneManager.GetSceneByBuildIndex(indexLevel);
             level = _levelScene.GetRootGameObjects();
             _levelTiles = level[0].transform;
             _tilesCount = _levelTiles.childCount;
@@ -37,7 +36,7 @@ namespace Arkanoid
 
         internal void LoadLevel(int indexLevel)
         {
-            StartCoroutine(LoadScene());
+            StartCoroutine(LoadScene(indexLevel));
         }
 
         internal void UnLoadLevel(int indexLevel)

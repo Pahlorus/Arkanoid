@@ -38,6 +38,12 @@ namespace Arkanoid
             _pellet.OnCollision += _pellet_OnCollision;
             _pellet.OnFailed += _pellet_OnFailed;
             _levelManager.OnLevelLoadCompleted += _levelManager_OnLevelLoadCompleted;
+            _levelManager.OnLevelUnLoadCompleted += _levelManager_OnLevelUnLoadCompleted;
+        }
+
+        private void _levelManager_OnLevelUnLoadCompleted(object sender, System.EventArgs e)
+        {
+       
         }
 
         private void _levelManager_OnLevelLoadCompleted(object sender, System.EventArgs e)
