@@ -31,7 +31,7 @@ namespace Arkanoid
         void Awake()
         {
             Cursor.visible = false;
-            _levelManager.LoadLevel(1);
+            _levelManager.LoadLevel(3);
             GameStart();
             _uiManager.LivesTextOutput(_lives);
             _uiManager.ScoreTextOutput(_scores);
@@ -139,7 +139,9 @@ namespace Arkanoid
             if (_tilesCount <= 0)
             {
                 _uiManager.LevelCompletedMessage();
-                GameStop();
+                _levelManager.UnLoadLevel(3);
+                _levelManager.LoadLevel(2);
+                //GameStop();
             }
         }
 

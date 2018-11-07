@@ -13,6 +13,8 @@ namespace Arkanoid
         private Text _scoreText;
         [SerializeField]
         private Text _livesText;
+        [SerializeField]
+        private Button[] _buttons;
 
         internal void GameOverMessage()
         {
@@ -28,7 +30,7 @@ namespace Arkanoid
         {
             foreach (var message in _messageTextArray)
             {
-                message.SetActive(true);
+                message.SetActive(false);
             }
         }
 
@@ -41,5 +43,36 @@ namespace Arkanoid
         {
             _livesText.text = "Lives: " + lives.ToString();
         }
+
+        internal void HUDTextSwitchOn()
+        {
+            _livesText.gameObject.SetActive(true);
+            _scoreText.gameObject.SetActive(true);
+        }
+
+        internal void HUDTextSwitchOff()
+        {
+            _livesText.gameObject.SetActive(false);
+            _scoreText.gameObject.SetActive(false);
+        }
+
+        internal void UIButtonsSwitchOn()
+        {
+            foreach (var button in _buttons)
+            {
+                button.gameObject.SetActive(true);
+            }
+        }
+
+        public void UIButtonsSwitchOff()
+        {
+            foreach (var button in _buttons)
+            {
+                button.gameObject.SetActive(false);
+            }
+        }
+
+
+
     }
 }

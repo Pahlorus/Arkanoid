@@ -15,6 +15,7 @@ namespace Arkanoid
         private Transform _levelTiles;
 
         internal event EventHandler OnLevelLoadCompleted;
+        internal event EventHandler OnLevelUnLoadCompleted;
 
         internal int TilesCount { get { return _tilesCount; } }
         internal Transform LevelTiles { get { return _levelTiles; } }
@@ -34,6 +35,17 @@ namespace Arkanoid
             OnLevelLoadCompleted?.Invoke(this, EventArgs.Empty);
         }
 
+        IEnumerator UnLoadScene(int indexLevel)
+        {
+            yield return null;
+            _asyncOperation = SceneManager.UnloadSceneAsync(indexLevel);
+            while (!_asyncOperation.isDone)
+            {
+                yield return null;
+            }
+            OnLevelUnLoadCompleted?.Invoke(this, EventArgs.Empty);
+        }
+
         internal void LoadLevel(int indexLevel)
         {
             StartCoroutine(LoadScene(indexLevel));
@@ -41,7 +53,7 @@ namespace Arkanoid
 
         internal void UnLoadLevel(int indexLevel)
         {
-
+            StartCoroutine(UnLoadScene(indexLevel));
         }
 
     }
