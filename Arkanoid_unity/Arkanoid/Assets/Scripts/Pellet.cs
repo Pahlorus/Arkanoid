@@ -41,6 +41,18 @@ namespace Arkanoid
             _pelletRigidbody.velocity = Vector3.zero;
         }
 
+        public void SwitchOn()
+        {
+            gameObject.SetActive(true);
+            enabled = true;
+        }
+
+        public void SwitchOff()
+        {
+            gameObject.SetActive(false);
+            enabled = false;
+        }
+
         void OnCollisionEnter2D(Collision2D collision)
         {
             if (collision.collider.GetComponent<Tile>())

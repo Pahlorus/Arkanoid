@@ -40,6 +40,20 @@ namespace Arkanoid
             }
         }
 
+        public void SwitchOn()
+        {
+            gameObject.SetActive(true);
+            enabled = true;
+        }
+
+        public void SwitchOff()
+        {
+            gameObject.SetActive(false);
+            enabled = false;
+        }
+
+
+
         internal void Update()
         {
             if (_batRigidbody2D.position.x > _limitBorderX)

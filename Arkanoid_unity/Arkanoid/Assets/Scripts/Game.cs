@@ -30,8 +30,6 @@ namespace Arkanoid
 
         void Awake()
         {
-            _uiManager.LivesTextOutput(_lives);
-            _uiManager.ScoreTextOutput(_scores);
             _pellet.OnCollision += _pellet_OnCollision;
             _pellet.OnFailed += _pellet_OnFailed;
             _levelManager.OnLevelLoadCompleted += _levelManager_OnLevelLoadCompleted;
@@ -59,11 +57,14 @@ namespace Arkanoid
             Cursor.visible = false;
             _lives = _initialLivesLimit;
             _scores = 0;
+            _uiManager.LivesTextOutput(_lives);
+            _uiManager.ScoreTextOutput(_scores);
             _levelManager.LoadLevel(3);
             _uiManager.HUDTextSwitchOn();
             _uiManager.UIButtonsSwitchOff();
             _isPowerUpActive = false;
-            
+            _pellet.SwitchOn();
+            _bat.SwitchOn();
         }
 
         public void GameStop()
