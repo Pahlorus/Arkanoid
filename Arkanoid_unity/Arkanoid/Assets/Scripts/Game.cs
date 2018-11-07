@@ -30,9 +30,6 @@ namespace Arkanoid
 
         void Awake()
         {
-            Cursor.visible = false;
-            _levelManager.LoadLevel(3);
-            GameStart();
             _uiManager.LivesTextOutput(_lives);
             _uiManager.ScoreTextOutput(_scores);
             _pellet.OnCollision += _pellet_OnCollision;
@@ -59,8 +56,12 @@ namespace Arkanoid
 
         public void GameStart()
         {
+            Cursor.visible = false;
             _lives = _initialLivesLimit;
             _scores = 0;
+            _levelManager.LoadLevel(3);
+            _uiManager.HUDTextSwitchOn();
+            _uiManager.UIButtonsSwitchOff();
             _isPowerUpActive = false;
             
         }
