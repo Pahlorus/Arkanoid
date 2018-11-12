@@ -7,7 +7,6 @@ namespace Arkanoid
 {
     public class LevelManager : MonoBehaviour
     {
-        [SerializeField]
         private GameObject[] _levelRootObjects;
         private int _scenesCount;
         private int _activeSceneIndex;
@@ -79,7 +78,7 @@ namespace Arkanoid
             _activeSceneIndex += 1;
         }
 
-        internal void UnLoadLevel(int indexLevel)
+        private void UnLoadLevel(int indexLevel)
         {
             StartCoroutine(UnLoadScene(indexLevel));
         }
