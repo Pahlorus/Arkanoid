@@ -26,6 +26,11 @@ namespace Arkanoid
             _messageTextArray[0].gameObject.SetActive(true);
         }
 
+        internal void WinMessage()
+        {
+            _messageTextArray[2].gameObject.SetActive(true);
+        }
+
         internal void DeleteMessage()
         {
             foreach (var message in _messageTextArray)

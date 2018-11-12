@@ -35,6 +35,13 @@ namespace Arkanoid
             _pellet.OnFailed += _pellet_OnFailed;
             _levelManager.OnLevelLoadCompleted += _levelManager_OnLevelLoadCompleted;
             _levelManager.OnLevelUnLoadCompleted += _levelManager_OnLevelUnLoadCompleted;
+            _levelManager.OnAllScenesCompleted += _levelManager_OnAllScenesCompleted;
+        }
+
+        private void _levelManager_OnAllScenesCompleted(object sender, System.EventArgs e)
+        {
+            GameStop();
+            _uiManager.WinMessage();
         }
 
         private void _levelManager_OnLevelUnLoadCompleted(object sender, System.EventArgs e)
@@ -64,7 +71,7 @@ namespace Arkanoid
             _scores = 0;
             _uiManager.LivesTextOutput(_lives);
             _uiManager.ScoreTextOutput(_scores);
-            _levelManager.LoadLevel(3);
+            _levelManager.LoadLevel(1);
             _uiManager.HUDTextSwitchOn();
             _uiManager.UIButtonsSwitchOff();
             _isPowerUpActive = false;
@@ -147,15 +154,8 @@ namespace Arkanoid
                 _pellet.PelletInActive();
                 _pellet.SwitchOff();
                 _bat.SwitchOff();
-                StartCoroutine(LevelChangeWithDelay(3));
+               _levelManager.ChangeLevel();
             }
-        }
-
-        IEnumerator LevelChangeWithDelay(float time)
-        {
-            yield return new WaitForSeconds(time);
-            _levelManager.UnLoadLevel(3);
-            _levelManager.LoadLevel(2);
         }
 
         private void BonusCreate()
