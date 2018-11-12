@@ -10,7 +10,7 @@ namespace Arkanoid
         private PowerUp[] _powerUpArray;
         private int _powerUpArrayLength;
 
-        private void Awake()
+        void Awake()
         {
             _powerUpArrayLength = this.GetComponent<PowerUpManager>()._powerUpArray.Length;
         }

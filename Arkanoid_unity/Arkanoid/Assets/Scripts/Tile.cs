@@ -12,7 +12,7 @@ namespace Arkanoid
 
         internal event EventHandler OnTileDestroy;
 
-        private void OnCollisionEnter2D()
+        void OnCollisionEnter2D()
         {
             if (_isDestroyable && _durability > 0)
                 _durability -= 1;
