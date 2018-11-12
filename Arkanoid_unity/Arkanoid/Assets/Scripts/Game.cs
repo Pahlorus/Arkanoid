@@ -1,4 +1,5 @@
 ﻿
+using System.Collections;
 using UnityEngine;
 
 namespace Arkanoid
@@ -38,11 +39,12 @@ namespace Arkanoid
 
         private void _levelManager_OnLevelUnLoadCompleted(object sender, System.EventArgs e)
         {
-       
+
         }
 
         private void _levelManager_OnLevelLoadCompleted(object sender, System.EventArgs e)
         {
+            _uiManager.DeleteMessage();
             _tilesCount = _levelManager.TilesCount;
             _levelTiles = _levelManager.LevelTiles;
 
@@ -50,6 +52,9 @@ namespace Arkanoid
             {
                 transform.GetComponent<Tile>().OnTileDestroy += Tile_OnTileDestroy;
             }
+
+            _pellet.SwitchOn();
+            _bat.SwitchOn();
         }
 
         public void GameStart()
@@ -69,11 +74,9 @@ namespace Arkanoid
 
         public void GameStop()
         {
-            enabled = false;
-            _bat.enabled = false;
+            _bat.SwitchOff();
             _pellet.PelletInActive();
-            _pellet.enabled = false;
-            _pellet.gameObject.SetActive(false);
+            _pellet.SwitchOff();
         }
 
         public void PelletSpeedUp()
@@ -141,10 +144,18 @@ namespace Arkanoid
             if (_tilesCount <= 0)
             {
                 _uiManager.LevelCompletedMessage();
-                _levelManager.UnLoadLevel(3);
-                _levelManager.LoadLevel(2);
-                //GameStop();
+                _pellet.PelletInActive();
+                _pellet.SwitchOff();
+                _bat.SwitchOff();
+                StartCoroutine(LevelChangeWithDelay(3));
             }
+        }
+
+        IEnumerator LevelChangeWithDelay(float time)
+        {
+            yield return new WaitForSeconds(time);
+            _levelManager.UnLoadLevel(3);
+            _levelManager.LoadLevel(2);
         }
 
         private void BonusCreate()

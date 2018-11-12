@@ -7,11 +7,12 @@ namespace Arkanoid
 {
     public class LevelManager : MonoBehaviour
     {
+        [SerializeField]
+        private GameObject[] level;
+
         private int _tilesCount;
         private Scene _levelScene;
         private AsyncOperation _asyncOperation;
-        [SerializeField]
-        private GameObject[] level;
         private Transform _levelTiles;
 
         internal event EventHandler OnLevelLoadCompleted;
@@ -22,7 +23,6 @@ namespace Arkanoid
 
         IEnumerator LoadScene(int indexLevel)
         {
-            yield return null;
             _asyncOperation = SceneManager.LoadSceneAsync(indexLevel, LoadSceneMode.Additive);
             while (!_asyncOperation.isDone)
             {
@@ -37,7 +37,6 @@ namespace Arkanoid
 
         IEnumerator UnLoadScene(int indexLevel)
         {
-            yield return null;
             _asyncOperation = SceneManager.UnloadSceneAsync(indexLevel);
             while (!_asyncOperation.isDone)
             {
@@ -45,6 +44,8 @@ namespace Arkanoid
             }
             OnLevelUnLoadCompleted?.Invoke(this, EventArgs.Empty);
         }
+
+
 
         internal void LoadLevel(int indexLevel)
         {
