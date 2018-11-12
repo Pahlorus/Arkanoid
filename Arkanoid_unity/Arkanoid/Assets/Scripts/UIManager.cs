@@ -81,7 +81,7 @@ namespace Arkanoid
             _mainMenuReturnButton.gameObject.SetActive(false);
         }
 
-        public void UIButtonsSwitchOff()
+        internal void UIButtonsSwitchOff()
         {
             foreach (var button in _mainMenuButtons)
             {

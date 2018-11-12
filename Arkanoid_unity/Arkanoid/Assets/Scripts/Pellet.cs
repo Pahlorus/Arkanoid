@@ -30,24 +30,24 @@ namespace Arkanoid
             _isPelletActive = false;
         }
 
-        public void SpeedUp()
+        internal void SpeedUp()
         {
             _pelletRigidbody.velocity = _pelletRigidbody.velocity * _speed;
         }
 
-        public void PelletInActive()
+        internal void PelletInActive()
         {
             _isPelletActive = false;
             _pelletRigidbody.velocity = Vector3.zero;
         }
 
-        public void SwitchOn()
+        internal void SwitchOn()
         {
             gameObject.SetActive(true);
             enabled = true;
         }
 
-        public void SwitchOff()
+        internal void SwitchOff()
         {
             gameObject.SetActive(false);
             enabled = false;

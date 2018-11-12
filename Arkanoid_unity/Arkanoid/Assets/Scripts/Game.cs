@@ -66,66 +66,6 @@ namespace Arkanoid
             _bat.SwitchOn();
         }
 
-        public void GameStart()
-        {
-            Cursor.visible = false;
-            _lives = _initialLivesLimit;
-            _scores = 0;
-            _uiManager.LivesTextOutput(_lives);
-            _uiManager.ScoreTextOutput(_scores);
-            _levelManager.ActiveSceneIndexReset();
-            _levelManager.LoadLevel(1);
-            _uiManager.HUDTextSwitchOn();
-            _uiManager.UIButtonsSwitchOff();
-            _isPowerUpActive = false;
-            _pellet.SwitchOn();
-            _bat.SwitchOn();
-        }
-        public void MainMenuReturn()
-        {
-            _uiManager.DeleteMessage();
-            _uiManager.UIButtonReturnSwitchOff();
-            _uiManager.HUDTextSwitchOff();
-            _uiManager.UIButtonsSwitchOn();
-        }
-
-        public void GameStop()
-        {
-            _bat.SwitchOff();
-            _pellet.PelletInActive();
-            _pellet.SwitchOff();
-        }
-
-        public void PelletSpeedUp()
-        {
-            _pellet.SpeedUp();
-        }
-
-        public void BatWidthUp()
-        {
-            _bat.WidthUp();
-        }
-
-        public void LivesUp()
-        {
-            _lives += 1;
-            _uiManager.LivesTextOutput(_lives);
-        }
-
-        public void ScoreUp()
-        {
-            _scores += _scoreStep;
-            _uiManager.ScoreTextOutput(_scores);
-        }
-
-        public void SetPowerUpStatus()
-        {
-            if (_isPowerUpActive)
-                _isPowerUpActive = false;
-            else
-                _isPowerUpActive = true;
-        }
-
         private void Tile_OnTileDestroy(object sender, System.EventArgs e)
         {
             CountTilesAndCheckLevelCompleted();
@@ -185,6 +125,67 @@ namespace Arkanoid
                     powerUp.transform.position = pelletPosition;
                 }
             }
+        }
+
+
+        internal void GameStart()
+        {
+            Cursor.visible = false;
+            _lives = _initialLivesLimit;
+            _scores = 0;
+            _uiManager.LivesTextOutput(_lives);
+            _uiManager.ScoreTextOutput(_scores);
+            _levelManager.ActiveSceneIndexReset();
+            _levelManager.LoadLevel(1);
+            _uiManager.HUDTextSwitchOn();
+            _uiManager.UIButtonsSwitchOff();
+            _isPowerUpActive = false;
+            _pellet.SwitchOn();
+            _bat.SwitchOn();
+        }
+        internal void MainMenuReturn()
+        {
+            _uiManager.DeleteMessage();
+            _uiManager.UIButtonReturnSwitchOff();
+            _uiManager.HUDTextSwitchOff();
+            _uiManager.UIButtonsSwitchOn();
+        }
+
+        internal void GameStop()
+        {
+            _bat.SwitchOff();
+            _pellet.PelletInActive();
+            _pellet.SwitchOff();
+        }
+
+        internal void PelletSpeedUp()
+        {
+            _pellet.SpeedUp();
+        }
+
+        internal void BatWidthUp()
+        {
+            _bat.WidthUp();
+        }
+
+        internal void LivesUp()
+        {
+            _lives += 1;
+            _uiManager.LivesTextOutput(_lives);
+        }
+
+        internal void ScoreUp()
+        {
+            _scores += _scoreStep;
+            _uiManager.ScoreTextOutput(_scores);
+        }
+
+        internal void SetPowerUpStatus()
+        {
+            if (_isPowerUpActive)
+                _isPowerUpActive = false;
+            else
+                _isPowerUpActive = true;
         }
 
         void Update()

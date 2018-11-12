@@ -25,7 +25,7 @@ namespace Arkanoid
 
         void Awake()
         {
-            _scenesCount = SceneManager.sceneCountInBuildSettings-1;
+            _scenesCount = SceneManager.sceneCountInBuildSettings - 1;
             _activeSceneIndex = 0;
         }
 
@@ -57,14 +57,18 @@ namespace Arkanoid
         {
             yield return new WaitForSeconds(time);
             UnLoadLevel(activeLevel);
-            LoadLevel(activeLevel+1);
+            LoadLevel(activeLevel + 1);
+        }
+
+        private void UnLoadLevel(int indexLevel)
+        {
+            StartCoroutine(UnLoadScene(indexLevel));
         }
 
         internal void ActiveSceneIndexReset()
         {
             _activeSceneIndex = 0;
         }
-
 
         internal void ChangeLevel()
         {
@@ -82,11 +86,5 @@ namespace Arkanoid
             StartCoroutine(LoadScene(indexLevel));
             _activeSceneIndex += 1;
         }
-
-        private void UnLoadLevel(int indexLevel)
-        {
-            StartCoroutine(UnLoadScene(indexLevel));
-        }
-
     }
 }

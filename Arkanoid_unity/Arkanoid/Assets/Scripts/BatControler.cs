@@ -23,7 +23,7 @@ namespace Arkanoid
         private SpriteRenderer _spriteRenderer;
         private Rigidbody2D _batRigidbody2D;
 
-        internal void Awake()
+        private void Awake()
         {
             _batTransform = transform;
             _coordY = _batTransform.position.y;
@@ -31,7 +31,7 @@ namespace Arkanoid
             _spriteRenderer = GetComponent<SpriteRenderer>();
         }
 
-        public void WidthUp()
+        internal void WidthUp()
         {
             if (_batTransform.localScale.x < _batScaleXMax)
             {
@@ -40,13 +40,13 @@ namespace Arkanoid
             }
         }
 
-        public void SwitchOn()
+        internal void SwitchOn()
         {
             gameObject.SetActive(true);
             enabled = true;
         }
 
-        public void SwitchOff()
+        internal void SwitchOff()
         {
             gameObject.SetActive(false);
             enabled = false;
@@ -54,7 +54,7 @@ namespace Arkanoid
 
 
 
-        internal void Update()
+        private void Update()
         {
             if (_batRigidbody2D.position.x > _limitBorderX)
             {
@@ -69,12 +69,12 @@ namespace Arkanoid
             _movement = new Vector2(Input.GetAxis("Mouse X"), 0);
         }
 
-        internal void FixedUpdate()
+        private void FixedUpdate()
         {
             _batRigidbody2D.MovePosition(_batTransform.position + _movement * Time.fixedDeltaTime * _speedBat);
         }
 
-        void OnCollisionEnter2D(Collision2D collision)
+        private void OnCollisionEnter2D(Collision2D collision)
         {
             if (collision.collider.GetComponent<Pellet>())
             {
