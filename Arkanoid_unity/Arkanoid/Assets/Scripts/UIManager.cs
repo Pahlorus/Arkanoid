@@ -14,7 +14,10 @@ namespace Arkanoid
         [SerializeField]
         private Text _livesText;
         [SerializeField]
-        private Button[] _buttons;
+        private Button[] _mainMenuButtons;
+        [SerializeField]
+        private Button _mainMenuReturnButton;
+
 
         internal void GameOverMessage()
         {
@@ -63,21 +66,27 @@ namespace Arkanoid
 
         internal void UIButtonsSwitchOn()
         {
-            foreach (var button in _buttons)
+            foreach (var button in _mainMenuButtons)
             {
                 button.gameObject.SetActive(true);
             }
         }
 
+        internal void UIButtonReturnSwitchOn()
+        {
+            _mainMenuReturnButton.gameObject.SetActive(true);
+        }
+        internal void UIButtonReturnSwitchOff()
+        {
+            _mainMenuReturnButton.gameObject.SetActive(false);
+        }
+
         public void UIButtonsSwitchOff()
         {
-            foreach (var button in _buttons)
+            foreach (var button in _mainMenuButtons)
             {
                 button.gameObject.SetActive(false);
             }
         }
-
-
-
     }
 }

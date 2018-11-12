@@ -60,6 +60,11 @@ namespace Arkanoid
             LoadLevel(activeLevel+1);
         }
 
+        internal void ActiveSceneIndexReset()
+        {
+            _activeSceneIndex = 0;
+        }
+
 
         internal void ChangeLevel()
         {

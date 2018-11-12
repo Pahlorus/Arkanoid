@@ -42,6 +42,8 @@ namespace Arkanoid
         {
             GameStop();
             _uiManager.WinMessage();
+            _uiManager.UIButtonReturnSwitchOn();
+            Cursor.visible = true;
         }
 
         private void _levelManager_OnLevelUnLoadCompleted(object sender, System.EventArgs e)
@@ -71,12 +73,20 @@ namespace Arkanoid
             _scores = 0;
             _uiManager.LivesTextOutput(_lives);
             _uiManager.ScoreTextOutput(_scores);
+            _levelManager.ActiveSceneIndexReset();
             _levelManager.LoadLevel(1);
             _uiManager.HUDTextSwitchOn();
             _uiManager.UIButtonsSwitchOff();
             _isPowerUpActive = false;
             _pellet.SwitchOn();
             _bat.SwitchOn();
+        }
+        public void MainMenuReturn()
+        {
+            _uiManager.DeleteMessage();
+            _uiManager.UIButtonReturnSwitchOff();
+            _uiManager.HUDTextSwitchOff();
+            _uiManager.UIButtonsSwitchOn();
         }
 
         public void GameStop()
@@ -154,7 +164,7 @@ namespace Arkanoid
                 _pellet.PelletInActive();
                 _pellet.SwitchOff();
                 _bat.SwitchOff();
-               _levelManager.ChangeLevel();
+                _levelManager.ChangeLevel();
             }
         }
 
