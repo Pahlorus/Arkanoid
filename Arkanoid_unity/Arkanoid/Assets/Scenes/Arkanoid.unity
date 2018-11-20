@@ -444,7 +444,7 @@ MonoBehaviour:
   m_Value: 0
   m_Options:
     m_Options:
-    - m_Text: Option A
+    - m_Text: DefaultName
       m_Image: {fileID: 0}
     - m_Text: Option B
       m_Image: {fileID: 0}
@@ -1614,7 +1614,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Option A
+  m_Text: DefaultName
 --- !u!222 &902745399
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1982,6 +1982,7 @@ MonoBehaviour:
   - {fileID: 1157068250}
   - {fileID: 294077502}
   _mainMenuReturnButton: {fileID: 725154384}
+  _nameDropdown: {fileID: 198524440}
 --- !u!1 &1098645955
 GameObject:
   m_ObjectHideFlags: 0
@@ -2823,7 +2824,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Option A
+  m_Text: DefaultName
 --- !u!222 &1477686742
 CanvasRenderer:
   m_ObjectHideFlags: 0

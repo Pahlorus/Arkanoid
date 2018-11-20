@@ -17,6 +17,8 @@ namespace Arkanoid
         private Button[] _mainMenuButtons;
         [SerializeField]
         private Button _mainMenuReturnButton;
+        [SerializeField]
+        private Dropdown _nameDropdown;
 
 
         internal void GameOverMessage()
